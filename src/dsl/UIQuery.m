@@ -8,6 +8,7 @@
 #import "UIRedoer.h"
 #import "UIQueryTableViewCell.h"
 #import "UIQueryTableView.h"
+#import "UIQueryScrollView.h"
 #import "UIQuerySearchBar.h"
 #import "UIQueryTabBar.h"
 #import "UIQuerySegmentedControl.h"
@@ -142,6 +143,9 @@
 		return [UIQueryTableViewCell withViews:array className:className];
 	} else if ([className isEqualToString:@"UITableView"]) {
 		return [UIQueryTableView withViews:array className:className];
+	} 
+	else if ([className isEqualToString:@"UIScrollView"]) {
+		return [UIQueryScrollView withViews:array className:className];
 	} 
 	else if ([className isEqualToString:@"UISearchBar"]) {
 		return [UIQuerySearchBar withViews:array className:className];
