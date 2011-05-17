@@ -71,7 +71,8 @@
 }
 
 -(id)initWithViews:(NSMutableArray *)_views className:(NSString *)_className filter:(BOOL)_filter {
-	if (self = [super init]) {
+    self = [super init];
+	if (self) {
 		self.timeout = 10;
 		self.views = _views;
 		self.className = _className;
