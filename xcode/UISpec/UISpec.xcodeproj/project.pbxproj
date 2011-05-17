@@ -17,6 +17,8 @@
 		2FDBB76310EECD0200193065 /* UIQueryWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDBB75B10EECD0200193065 /* UIQueryWebView.m */; };
 		40C7CC2A12E9E854003FF22C /* DescribeUIExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = C7D4F2EC10BDA57C00B00019 /* DescribeUIExpectation.h */; };
 		40C7CC2D12E9E8BB003FF22C /* libUISpec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C76EB5D20F74586B00EF8398 /* libUISpec.a */; };
+		B3C25CDF1381E93500BB634B /* UIQueryScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C25CDD1381E93500BB634B /* UIQueryScrollView.m */; };
+		B3C25CE01381E93500BB634B /* UIQueryScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C25CDE1381E93500BB634B /* UIQueryScrollView.h */; };
 		C708D8F110C4B86A000A2462 /* UIMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = C708D8EE10C4B86A000A2462 /* UIMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C708D8F210C4B86A000A2462 /* UIMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C708D8EF10C4B86A000A2462 /* UIMatcher.m */; };
 		C7407B5C101AA2FA00E5392C /* WaitUntilIdle.h in Headers */ = {isa = PBXBuildFile; fileRef = C7407B58101AA2F900E5392C /* WaitUntilIdle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -91,6 +93,8 @@
 		2FDBB75910EECD0200193065 /* UIQueryTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIQueryTabBar.m; sourceTree = "<group>"; };
 		2FDBB75A10EECD0200193065 /* UIQueryWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQueryWebView.h; sourceTree = "<group>"; };
 		2FDBB75B10EECD0200193065 /* UIQueryWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIQueryWebView.m; sourceTree = "<group>"; };
+		B3C25CDD1381E93500BB634B /* UIQueryScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIQueryScrollView.m; sourceTree = "<group>"; };
+		B3C25CDE1381E93500BB634B /* UIQueryScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQueryScrollView.h; sourceTree = "<group>"; };
 		C708D8EE10C4B86A000A2462 /* UIMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMatcher.h; sourceTree = "<group>"; };
 		C708D8EF10C4B86A000A2462 /* UIMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMatcher.m; sourceTree = "<group>"; };
 		C7407B58101AA2F900E5392C /* WaitUntilIdle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitUntilIdle.h; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 		C76EB7500F76DFF400EF8398 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				B3C25CDD1381E93500BB634B /* UIQueryScrollView.m */,
+				B3C25CDE1381E93500BB634B /* UIQueryScrollView.h */,
 				2FDBB75410EECD0200193065 /* UIQuerySearchBar.h */,
 				2FDBB75510EECD0200193065 /* UIQuerySearchBar.m */,
 				2FDBB75610EECD0200193065 /* UIQuerySegmentedControl.h */,
@@ -338,6 +344,7 @@
 				2FDBB75E10EECD0200193065 /* UIQuerySegmentedControl.h in Headers */,
 				2FDBB76010EECD0200193065 /* UIQueryTabBar.h in Headers */,
 				2FDBB76210EECD0200193065 /* UIQueryWebView.h in Headers */,
+				B3C25CE01381E93500BB634B /* UIQueryScrollView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +456,7 @@
 				2FDBB75F10EECD0200193065 /* UIQuerySegmentedControl.m in Sources */,
 				2FDBB76110EECD0200193065 /* UIQueryTabBar.m in Sources */,
 				2FDBB76310EECD0200193065 /* UIQueryWebView.m in Sources */,
+				B3C25CDF1381E93500BB634B /* UIQueryScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
