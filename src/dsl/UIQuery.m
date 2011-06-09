@@ -421,7 +421,7 @@
 
 - (UIQuery *)touchxy:(NSNumber *)x ycoord:(NSNumber *)y
 {
-    [self touchx:x y:y]; // call new function name but allow for choice
+    return [self touchx:x y:y]; // call new function name but allow for choice
 }
 
 - (UIQuery *)touchx:(NSNumber *)x y:(NSNumber *)y {
