@@ -8,7 +8,9 @@
 #import "ViewFilterSwizzler.h"
 #import "UIQueryExpectation.h"
 
-@class UIFilter, UIRedoer;
+@class UIFilter;
+@class UIRedoer;
+@class UIQueryGestureDelegate;
 
 UIQuery * $(NSMutableString *script, ...);
 
@@ -23,6 +25,8 @@ UIQuery * $(NSMutableString *script, ...);
 	UIRedoer *redoer;
 	int timeout;
 	BOOL filter, exists;
+    
+    UIQueryGestureDelegate *gestureDelegate;
 }
 
 @property(nonatomic, readonly) UIFilter *with;
@@ -64,11 +68,15 @@ UIQuery * $(NSMutableString *script, ...);
 -(UIQuery *)show;
 -(UIQuery *)path;
 -(UIQuery *)inspect;
+-(NSString *)description;
+-(void)logRange:(NSString *)prefix range:(NSRange)range;
+
+// User event generation
 - (UIQuery *)touch;
 - (UIQuery *)touchx:(NSNumber *)x y:(NSNumber *)y;
 - (UIQuery *)touchxy:(NSNumber *)x ycoord:(NSNumber *)y;
--(NSString *)description;
--(void)logRange:(NSString *)prefix range:(NSRange)range;
+- (UIQuery *) tap;
+- (UIQuery *) tapAtPoint: (CGPoint) point;
 
 +(id)withApplication;
 +(NSDictionary *)describe:(id)object;

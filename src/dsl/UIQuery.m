@@ -21,6 +21,11 @@
 
 #import "UIEvent+Synthesize.h"
 #import "UITouch+Synthesize.h"
+#import "UIQueryGestureDelegate.h"
+
+@interface UIQuery()
+- (UIQueryGestureDelegate *) gestureDelegate;
+@end
 
 @implementation UIQuery
 
@@ -398,6 +403,16 @@
     return properties;
 }
 
+#pragma mark - User Event Generation (tap, swipe etc).
+#pragma mark Gesture delegate lazy getter
+- (UIQueryGestureDelegate*) gestureDelegate
+{
+    static dispatch_once_t once;
+    dispatch_once(&once, ^ { gestureDelegate = [[UIQueryGestureDelegate alloc] init]; });
+    return gestureDelegate;
+}
+
+#pragma mark Legacy Touch
 - (UIQuery *)touch {
 	[[UIQueryExpectation withQuery:self] exist:@"before you can touch it"];
 	
@@ -473,6 +488,20 @@
 	return [UIQuery withViews:views className:className];
 }
 
+#pragma mark Tap
+- (UIQuery *) tap
+{
+    UIQueryGestureDelegate *delegate = [self gestureDelegate];
+    [delegate tap];
+}
+
+- (UIQuery *) tapAtPoint: (CGPoint) point
+{
+    UIQueryGestureDelegate *delegate = [self gestureDelegate];
+    [delegate tapAtPoint: point];
+}
+
+#pragma mark Swipe
 
 -(NSString *)description {
 	return [NSString stringWithFormat:@"UIQuery: %@", [views description]];
