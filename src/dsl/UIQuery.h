@@ -99,14 +99,3 @@ UIQuery * $(NSMutableString *script, ...);
 -(UIQuery *)target;
 
 @end
-
-@interface UIEvent (Synthesis)
-- (id)initWithTouch:(UITouch *)touch;
-@end
-
-@interface UITouch (Synthesize)
-- (id)initInView:(UIView *)view;
-- (id)initInView:(UIView *)view xcoord:(int)x ycoord:(int)y;
-- (void)setPhase:(UITouchPhase)phase;
-- (void)setLocationInWindow:(CGPoint)location;
-@end
