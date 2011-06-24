@@ -37,6 +37,13 @@ typedef enum SwipeDirection
 // taps the screen at the given point, in window coordinates
 - (void) tapAtPoint: (CGPoint) point;
 
-// swipes the screen in given direction, starting at start point (window coordinates)
+// swipes from center of view in the given direction
+- (void)swipeInViews: (NSArray*) view direction: (SwipeDirection) direction;
+
+// swipes in given direction, starting at start point (window coordinates)
 - (void)swipeAt: (CGPoint) start direction: (SwipeDirection) direction;
+
+// swipes from start to end
+- (void)swipeFrom: (CGPoint) start to: (CGPoint) end;
+
 @end

@@ -72,12 +72,19 @@ UIQuery * $(NSMutableString *script, ...);
 -(void)logRange:(NSString *)prefix range:(NSRange)range;
 
 // User event generation
+// legacy
 - (UIQuery *)touch;
 - (UIQuery *)touchx:(NSNumber *)x y:(NSNumber *)y;
 - (UIQuery *)touchxy:(NSNumber *)x ycoord:(NSNumber *)y;
-- (UIQuery *) tap;
-- (UIQuery *) tapAtPoint: (CGPoint) point;
-- (UIQuery *) swipeAt: (NSString*) start direction: (NSNumber *) direction;
+
+//tapping
+- (UIQuery *)tap;
+- (UIQuery *)tapAtPoint: (NSString*) point;
+
+// swiping
+- (UIQuery *)swipeInDirection: (NSNumber *) direction;
+- (UIQuery *)swipeAt: (NSString*) start direction: (NSNumber *) direction;
+- (UIQuery *)swipeFrom: (NSString*) start to: (NSString*) end;
 
 +(id)withApplication;
 +(NSDictionary *)describe:(id)object;

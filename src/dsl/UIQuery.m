@@ -450,23 +450,44 @@
     return [UIQuery withViews:views className:className];
 }
 
-- (UIQuery *) tapAtPoint: (CGPoint) point
+- (UIQuery *) tapAtPoint: (NSString *) point
 {
+    CGPoint tapPoint = CGPointFromString(point);
     // forward call to touch performer
-    [self.touchPerformer tapAtPoint: point];
+    [self.touchPerformer tapAtPoint: tapPoint];
     return [UIQuery withViews:views className:className];
 }
 
 #pragma mark Swipe
+// swipes from center of view in the given direction
+- (UIQuery *)swipeInDirection: (NSNumber *) direction
+{
+    NSArray *targetViews = [self targetViews];
+    SwipeDirection swipeDirection = [direction intValue];
+    [self.touchPerformer swipeInViews: targetViews direction: swipeDirection];
+    
+    return [UIQuery withViews:views className:className];
+}
+
+// swipe at given point in given direction
+// point must be in the format recognized by CGPointFromString
+// direction maps to SwipingDirection enum
 - (UIQuery *) swipeAt: (NSString *) start direction: (NSNumber *) direction
 {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    
     CGPoint point = CGPointFromString(start);
-    // forward call to touch performer
-    [self.touchPerformer swipeAt: point direction: [direction intValue]];
+    SwipeDirection swipeDirection = [direction intValue];
+    [self.touchPerformer swipeAt: point direction: swipeDirection];
     
-    [pool drain];
+    return [UIQuery withViews:views className:className];
+}
+
+// swipes from start to end during DEFAULT_DURATION seconds
+- (UIQuery *)swipeFrom: (NSString*) start to: (NSString*) end
+{
+    CGPoint startPoint = CGPointFromString(start);
+    CGPoint endPoint = CGPointFromString(end);
+    [self.touchPerformer swipeFrom: startPoint to: endPoint];
+    
     return [UIQuery withViews:views className:className];
 }
 

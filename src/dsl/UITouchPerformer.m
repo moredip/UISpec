@@ -14,7 +14,7 @@
 #import "VisibleTouch.h"
 
 @interface UITouchPerformer()
-- (BOOL) isHorizontal: (SwipeDirection) direction;
+- (CGPoint) keepPointInDeviceBounds: (CGPoint) point;
 -(void) wait:(double)seconds;
 @end
 
@@ -70,36 +70,81 @@
 }
 
 #pragma mark - Swiping
+// swipes from center of each view in the given direction
+- (void)swipeInViews: (NSArray*) views direction: (SwipeDirection) direction
+{
+    for(UIView *view in views)
+    {
+        // grab center of view.
+        CGPoint start = [view convertPoint: [view center] toView: nil];
+
+        // now swipe in direction
+        [self swipeAt: start direction: direction];
+        [self wait: 0.1];
+    }
+}
+
 - (void)swipeAt: (CGPoint) start direction: (SwipeDirection) direction
 {
-    UITouch *touch = [UITouch touchAtPoint: start];
+    // initialize to start, just to prevent weird behavior in case end
+    // ends not initialized
+    CGPoint end = CGPointMake(start.x, start.y);
+    switch (direction) {
+        case LEFT:
+            end = CGPointMake(start.x - 80, start.y + 5);
+            break;
+        case RIGHT:
+            end = CGPointMake(start.x + 80, start.y + 5);
+            break;
+        case UP:
+            end = CGPointMake(start.x + 5, start.y - 80);
+            break;
+        case DOWN:
+            end = CGPointMake(start.x + 5, start.y + 80);
+            break;
+    }
+    
+    // now go for actual swipe
+    [self swipeFrom: start to: end];
+}
 
+// swipes from start to end
+- (void)swipeFrom: (CGPoint) start to: (CGPoint) end
+{
+    start = [self keepPointInDeviceBounds: start];
+    end = [self keepPointInDeviceBounds: end];
+    // create initial touch and UIEvent
+    UITouch *touch = [UITouch touchAtPoint: start];
+    
     UIEvent *event = [UIEvent eventWithTouch: touch];
     [event _addGestureRecognizersForView: touch.view toTouch: touch];
     
+    // dispatch touch down
     [[UIApplication sharedApplication] sendEvent: event];
-        
-    for(int i = 0; i < 15; i++)
+    
+    // we'll dispatch 10 move events.
+    int numberOfSteps = 10;
+    // compute x and y offset per step
+    CGFloat xLength = end.x - start.x;
+    CGFloat xOffset = fabs(xLength) / numberOfSteps;
+    if(xLength < 0)
     {
-        [self wait: 0.001];
-        // compute new position in view
-        CGFloat newX;
-        CGFloat newY;
-        if([self isHorizontal: direction])
-        {
-            // will evaluate to -1 for left and 1 for right
-            int directionSign = direction - 2;
-            newX = start.x + directionSign * i * 7 ;
-            newY = start.y + i;
-        }
-        else
-        {
-            // evaluates to 1 for down, -1 for up
-            int directionSign = direction - 1;
-            newX = start.x + i;
-            newY = start.y + directionSign * i * 7 ;
-        }
-        
+        xOffset = -xOffset;
+    }
+    
+    CGFloat yLength = end.y - start.y;
+    CGFloat yOffset = fabs(yLength) / numberOfSteps;
+    if(yLength < 0)
+    {
+        yOffset = -yOffset;
+    }
+    
+    // create the new location for every step, create event and dispatch it
+    for(int i = 0; i < numberOfSteps; i++)
+    {
+        [self wait: 0.01];
+        CGFloat newX = start.x + (i+1) * xOffset;
+        CGFloat newY = start.y + (i+1) * yOffset;
         CGPoint newLocation = CGPointMake(newX, newY);
         [touch setLocationInWindow: newLocation];
         [touch setPhase: UITouchPhaseMoved];
@@ -109,17 +154,44 @@
         [[UIApplication sharedApplication] sendEvent: event];
     }
     
-    [self wait: 0.001];
+    [self wait: 0.01];
+    // don't forget phase ended touch
     [touch setPhase:UITouchPhaseEnded];
-
+    
     [event updateTimestamp];
     [[UIApplication sharedApplication] sendEvent: event];
 }
 
-- (BOOL) isHorizontal: (SwipeDirection) direction
+- (CGPoint) keepPointInDeviceBounds: (CGPoint) point
 {
-    return direction == RIGHT || direction == LEFT;
+    CGRect frame = [[[UIApplication sharedApplication] keyWindow] frame];
+    if(CGRectContainsPoint(frame, point))
+    {
+        return point;
+    }
+    
+    if(point.x < 0)
+    {
+        point.x = 0;
+    }
+    
+    if(point.x > frame.size.width)
+    {
+        point.x = frame.size.width - 1;
+    }
+    
+    
+    if(point.y < 0)
+    {
+        point.y = 0;
+    }
+    
+    if(point.y > frame.size.height)
+    {
+        point.y = frame.size.height - 1;
+    }
 }
+
 
 #pragma mark - Pinching
 
