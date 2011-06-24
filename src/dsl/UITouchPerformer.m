@@ -11,18 +11,21 @@
 #import "UITouch+Synthesize.h"
 #import "UIEvent+Synthesize.h"
 
+#import "VisibleTouch.h"
+
 @interface UITouchPerformer()
-- (void) tapInView: (UIView*) view;
 - (BOOL) isHorizontal: (SwipeDirection) direction;
+-(void) wait:(double)seconds;
 @end
 
 @implementation UITouchPerformer
 
-- (id) touchPerformer
++ (id) touchPerformer
 {
     return [[[UITouchPerformer alloc] init] autorelease];
 }
 
+#pragma mark - Tapping
 - (void) tapOnViews: (NSArray*) views
 {
     for(UIView *targetView in views)
@@ -66,6 +69,7 @@
     [[UIApplication sharedApplication] sendEvent: event];
 }
 
+#pragma mark - Swiping
 - (void)swipeAt: (CGPoint) start direction: (SwipeDirection) direction
 {
     UITouch *touch = [UITouch touchAtPoint: start];
@@ -112,6 +116,87 @@
 - (BOOL) isHorizontal: (SwipeDirection) direction
 {
     return direction == RIGHT || direction == LEFT;
+}
+
+#pragma mark - Pinching
+
+#pragma mark - Legacy
+- (void) touchViews: (NSArray*) targetViews atPoint: (CGPoint) point
+{
+    for (UIView *aView in targetViews) {
+		UITouch *aTouch = [[UITouch alloc] initInView:aView xcoord:point.x ycoord:point.y];
+        
+        // Create a view to display a visible touch on the screen with a center of the touch
+        UIView *visibleTouch = [[VisibleTouch alloc] initWithCenter: point];
+        [[aView window] addSubview:visibleTouch];
+        [[aView window] bringSubviewToFront:visibleTouch];
+        
+		UIEvent *eventDown = [[NSClassFromString(@"UITouchesEvent") alloc] initWithTouch:aTouch];
+		NSSet *touches = [[NSMutableSet alloc] initWithObjects:&aTouch count:1];
+		
+		[aTouch.view touchesBegan:touches withEvent:eventDown];
+        
+        // Send event to the gesture recognizers
+        for (UIGestureRecognizer *recognizer in [aView gestureRecognizers])
+        {
+            if(![recognizer respondsToSelector:@selector(touchesBegan:withEvent:)])
+            {
+                continue;
+            }
+
+            [recognizer touchesBegan:touches withEvent:eventDown];
+        }
+        
+        [self wait:.25]; // Pause so touch can be seen
+        
+		UIEvent *eventUp = [[NSClassFromString(@"UITouchesEvent") alloc] initWithTouch:aTouch];
+		[aTouch setPhase:UITouchPhaseEnded];
+		
+		[aTouch.view touchesEnded:touches withEvent:eventDown];
+        
+        for (UIGestureRecognizer *recognizer in [aView gestureRecognizers])
+        {
+            if(![recognizer respondsToSelector:@selector(touchesEnded:withEvent:)])
+            {
+                continue;
+            }
+
+            [recognizer touchesEnded:touches withEvent:eventDown];
+        }
+        
+        [visibleTouch removeFromSuperview];
+        [visibleTouch release];
+        
+		[eventDown release];
+		[eventUp release];
+		[touches release];
+		[aTouch release];
+		[self wait:.5];
+	}
+
+}
+
+- (void) touch:(NSArray*) targetViews
+{
+    for (UIView *targetView in targetViews) {
+		UITouch *targetTouch = [[UITouch alloc] initInView:targetView];
+		UIEvent *eventDown = [[NSClassFromString(@"UITouchesEvent") alloc] initWithTouch:targetTouch];
+		NSSet *touches = [NSMutableSet setWithObject: targetTouch];
+		
+		[targetTouch.view touchesBegan:touches withEvent:eventDown];
+		
+		[targetTouch setPhase:UITouchPhaseEnded];
+		
+		[targetTouch.view touchesEnded:touches withEvent:eventDown];
+		
+		[eventDown release];
+		[targetTouch release];
+	}
+}
+
+-(void) wait:(double)seconds 
+{
+	CFRunLoopRunInMode(kCFRunLoopDefaultMode, seconds, false);
 }
 
 @end
