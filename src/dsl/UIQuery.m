@@ -430,7 +430,6 @@
 		[targetTouch.view touchesEnded:touches withEvent:eventDown];
 		
 		[eventDown release];
-		[touches release];
 		[targetTouch release];
 		[self wait:.5];
 	}
