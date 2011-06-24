@@ -408,8 +408,10 @@
 #pragma mark Gesture delegate lazy getter
 - (UITouchPerformer*) touchPerformer
 {
-    static dispatch_once_t once;
-    dispatch_once(&once, ^ { self.touchPerformer = [UITouchPerformer touchPerformer]; });
+    if(touchPerformer == nil)
+    {
+        self.touchPerformer = [UITouchPerformer touchPerformer];
+    }
     return touchPerformer;
 }
 
@@ -456,12 +458,20 @@
 }
 
 #pragma mark Swipe
-- (UIQuery *) swipeAt: (CGPoint) start direction: (SwipeDirection) direction
+- (UIQuery *) swipeAt: (NSString *) start direction: (NSNumber *) direction
 {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
+    CGPoint point = CGPointFromString(start);
     // forward call to touch performer
-    [self.touchPerformer swipeAt: start direction: direction];
+    [self.touchPerformer swipeAt: point direction: [direction intValue]];
+    
+    [pool drain];
     return [UIQuery withViews:views className:className];
 }
+
+#pragma mark Pinch
+
 -(NSString *)description {
 	return [NSString stringWithFormat:@"UIQuery: %@", [views description]];
 }

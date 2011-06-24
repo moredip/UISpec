@@ -79,8 +79,9 @@
     
     [[UIApplication sharedApplication] sendEvent: event];
         
-    for(int i = 0; i < 20; i++)
+    for(int i = 0; i < 15; i++)
     {
+        [self wait: 0.001];
         // compute new position in view
         CGFloat newX;
         CGFloat newY;
@@ -88,7 +89,7 @@
         {
             // will evaluate to -1 for left and 1 for right
             int directionSign = direction - 2;
-            newX = start.x + directionSign * i * 20 ;
+            newX = start.x + directionSign * i * 7 ;
             newY = start.y + i;
         }
         else
@@ -96,7 +97,7 @@
             // evaluates to 1 for down, -1 for up
             int directionSign = direction - 1;
             newX = start.x + i;
-            newY = start.y + directionSign * i * 20 ;
+            newY = start.y + directionSign * i * 7 ;
         }
         
         CGPoint newLocation = CGPointMake(newX, newY);
@@ -108,7 +109,9 @@
         [[UIApplication sharedApplication] sendEvent: event];
     }
     
+    [self wait: 0.001];
     [touch setPhase:UITouchPhaseEnded];
+
     [event updateTimestamp];
     [[UIApplication sharedApplication] sendEvent: event];
 }

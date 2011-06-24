@@ -77,7 +77,7 @@ UIQuery * $(NSMutableString *script, ...);
 - (UIQuery *)touchxy:(NSNumber *)x ycoord:(NSNumber *)y;
 - (UIQuery *) tap;
 - (UIQuery *) tapAtPoint: (CGPoint) point;
-- (UIQuery *) swipeAt: (CGPoint) start direction: (SwipeDirection) direction;
+- (UIQuery *) swipeAt: (NSString*) start direction: (NSNumber *) direction;
 
 +(id)withApplication;
 +(NSDictionary *)describe:(id)object;
