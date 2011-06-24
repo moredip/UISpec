@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		003A2CA313B3C6470092AD2B /* UIQueryGestureDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2C9F13B3C6470092AD2B /* UIQueryGestureDelegate.h */; };
-		003A2CA413B3C6470092AD2B /* UIQueryGestureDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2CA013B3C6470092AD2B /* UIQueryGestureDelegate.m */; };
-		003A2CA513B3C6470092AD2B /* UITouch+Synthesize.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2CA113B3C6470092AD2B /* UITouch+Synthesize.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		003A2CA613B3C6470092AD2B /* UITouch+Synthesize.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2CA213B3C6470092AD2B /* UITouch+Synthesize.m */; };
-		003A2CB313B3E1940092AD2B /* UIEvent+Synthesize.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2CB113B3E1940092AD2B /* UIEvent+Synthesize.h */; };
-		003A2CB413B3E1940092AD2B /* UIEvent+Synthesize.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2CB213B3E1940092AD2B /* UIEvent+Synthesize.m */; };
 		003A2CB713B3E6E90092AD2B /* VisibleTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2CB513B3E6E90092AD2B /* VisibleTouch.h */; };
 		003A2CB813B3E6E90092AD2B /* VisibleTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2CB613B3E6E90092AD2B /* VisibleTouch.m */; };
 		003A2CBA13B3E7010092AD2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003A2CB913B3E7010092AD2B /* UIKit.framework */; };
 		003A2CBC13B3E7090092AD2B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003A2CBB13B3E7090092AD2B /* CoreGraphics.framework */; };
+		003A2ED113B43B6C0092AD2B /* UIEvent+Synthesize.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2ECB13B43B6A0092AD2B /* UIEvent+Synthesize.h */; };
+		003A2ED213B43B6C0092AD2B /* UIEvent+Synthesize.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2ECC13B43B6B0092AD2B /* UIEvent+Synthesize.m */; };
+		003A2ED513B43B6C0092AD2B /* UITouch+Synthesize.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2ECF13B43B6B0092AD2B /* UITouch+Synthesize.h */; };
+		003A2ED613B43B6C0092AD2B /* UITouch+Synthesize.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2ED013B43B6B0092AD2B /* UITouch+Synthesize.m */; };
+		003A2ED913B43BDB0092AD2B /* UIQueryGestureDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2ED713B43BDB0092AD2B /* UIQueryGestureDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		003A2EDA13B43BDB0092AD2B /* UIQueryGestureDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2ED813B43BDB0092AD2B /* UIQueryGestureDelegate.m */; };
 		2FDBB75C10EECD0200193065 /* UIQuerySearchBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FDBB75410EECD0200193065 /* UIQuerySearchBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FDBB75D10EECD0200193065 /* UIQuerySearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDBB75510EECD0200193065 /* UIQuerySearchBar.m */; };
 		2FDBB75E10EECD0200193065 /* UIQuerySegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FDBB75610EECD0200193065 /* UIQuerySegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,16 +95,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		003A2C9F13B3C6470092AD2B /* UIQueryGestureDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIQueryGestureDelegate.h; path = ../../../Frank/lib/uispec/dsl/UIQueryGestureDelegate.h; sourceTree = "<group>"; };
-		003A2CA013B3C6470092AD2B /* UIQueryGestureDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIQueryGestureDelegate.m; path = ../../../Frank/lib/uispec/dsl/UIQueryGestureDelegate.m; sourceTree = "<group>"; };
-		003A2CA113B3C6470092AD2B /* UITouch+Synthesize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITouch+Synthesize.h"; path = "../../../Frank/lib/uispec/dsl/UITouch+Synthesize.h"; sourceTree = "<group>"; };
-		003A2CA213B3C6470092AD2B /* UITouch+Synthesize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITouch+Synthesize.m"; path = "../../../Frank/lib/uispec/dsl/UITouch+Synthesize.m"; sourceTree = "<group>"; };
-		003A2CB113B3E1940092AD2B /* UIEvent+Synthesize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIEvent+Synthesize.h"; path = "../../../Frank/lib/uispec/dsl/UIEvent+Synthesize.h"; sourceTree = "<group>"; };
-		003A2CB213B3E1940092AD2B /* UIEvent+Synthesize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIEvent+Synthesize.m"; path = "../../../Frank/lib/uispec/dsl/UIEvent+Synthesize.m"; sourceTree = "<group>"; };
 		003A2CB513B3E6E90092AD2B /* VisibleTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisibleTouch.h; sourceTree = "<group>"; };
 		003A2CB613B3E6E90092AD2B /* VisibleTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisibleTouch.m; sourceTree = "<group>"; };
 		003A2CB913B3E7010092AD2B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		003A2CBB13B3E7090092AD2B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		003A2ECB13B43B6A0092AD2B /* UIEvent+Synthesize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIEvent+Synthesize.h"; sourceTree = "<group>"; };
+		003A2ECC13B43B6B0092AD2B /* UIEvent+Synthesize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIEvent+Synthesize.m"; sourceTree = "<group>"; };
+		003A2ECF13B43B6B0092AD2B /* UITouch+Synthesize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITouch+Synthesize.h"; sourceTree = "<group>"; };
+		003A2ED013B43B6B0092AD2B /* UITouch+Synthesize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch+Synthesize.m"; sourceTree = "<group>"; };
+		003A2ED713B43BDB0092AD2B /* UIQueryGestureDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQueryGestureDelegate.h; sourceTree = "<group>"; };
+		003A2ED813B43BDB0092AD2B /* UIQueryGestureDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIQueryGestureDelegate.m; sourceTree = "<group>"; };
 		2FDBB75410EECD0200193065 /* UIQuerySearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQuerySearchBar.h; sourceTree = "<group>"; };
 		2FDBB75510EECD0200193065 /* UIQuerySearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIQuerySearchBar.m; sourceTree = "<group>"; };
 		2FDBB75610EECD0200193065 /* UIQuerySegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQuerySegmentedControl.h; sourceTree = "<group>"; };
@@ -267,8 +267,6 @@
 				C7653A931023BE15001FF86B /* UIParents.m */,
 				C76EB7560F76DFF400EF8398 /* UIQuery.h */,
 				C76EB7570F76DFF400EF8398 /* UIQuery.m */,
-				003A2C9F13B3C6470092AD2B /* UIQueryGestureDelegate.h */,
-				003A2CA013B3C6470092AD2B /* UIQueryGestureDelegate.m */,
 				C76EB7540F76DFF400EF8398 /* UIFilter.h */,
 				C76EB7550F76DFF400EF8398 /* UIFilter.m */,
 				C76EB7580F76DFF400EF8398 /* UIExpectation.h */,
@@ -283,12 +281,14 @@
 				C708D8EF10C4B86A000A2462 /* UIMatcher.m */,
 				C77A47CE10C9903B00C1BF8D /* UIQueryExpectation.h */,
 				C77A47CF10C9903B00C1BF8D /* UIQueryExpectation.m */,
-				003A2CA113B3C6470092AD2B /* UITouch+Synthesize.h */,
-				003A2CA213B3C6470092AD2B /* UITouch+Synthesize.m */,
-				003A2CB113B3E1940092AD2B /* UIEvent+Synthesize.h */,
-				003A2CB213B3E1940092AD2B /* UIEvent+Synthesize.m */,
 				003A2CB513B3E6E90092AD2B /* VisibleTouch.h */,
 				003A2CB613B3E6E90092AD2B /* VisibleTouch.m */,
+				003A2ECB13B43B6A0092AD2B /* UIEvent+Synthesize.h */,
+				003A2ECC13B43B6B0092AD2B /* UIEvent+Synthesize.m */,
+				003A2ECF13B43B6B0092AD2B /* UITouch+Synthesize.h */,
+				003A2ED013B43B6B0092AD2B /* UITouch+Synthesize.m */,
+				003A2ED713B43BDB0092AD2B /* UIQueryGestureDelegate.h */,
+				003A2ED813B43BDB0092AD2B /* UIQueryGestureDelegate.m */,
 			);
 			name = dsl;
 			path = ../../src/dsl;
@@ -372,15 +372,15 @@
 				C77A47D310C9903B00C1BF8D /* UIQueryExpectation.h in Headers */,
 				C7EFF4D710E40D02007DB16A /* UILog.h in Headers */,
 				C7EFF50E10E41565007DB16A /* UIConsoleLog.h in Headers */,
-				003A2CA513B3C6470092AD2B /* UITouch+Synthesize.h in Headers */,
 				2FDBB75C10EECD0200193065 /* UIQuerySearchBar.h in Headers */,
 				2FDBB75E10EECD0200193065 /* UIQuerySegmentedControl.h in Headers */,
 				2FDBB76010EECD0200193065 /* UIQueryTabBar.h in Headers */,
 				2FDBB76210EECD0200193065 /* UIQueryWebView.h in Headers */,
+				003A2ED913B43BDB0092AD2B /* UIQueryGestureDelegate.h in Headers */,
 				B3C25CE01381E93500BB634B /* UIQueryScrollView.h in Headers */,
-				003A2CA313B3C6470092AD2B /* UIQueryGestureDelegate.h in Headers */,
-				003A2CB313B3E1940092AD2B /* UIEvent+Synthesize.h in Headers */,
 				003A2CB713B3E6E90092AD2B /* VisibleTouch.h in Headers */,
+				003A2ED113B43B6C0092AD2B /* UIEvent+Synthesize.h in Headers */,
+				003A2ED513B43B6C0092AD2B /* UITouch+Synthesize.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,10 +493,10 @@
 				2FDBB76110EECD0200193065 /* UIQueryTabBar.m in Sources */,
 				2FDBB76310EECD0200193065 /* UIQueryWebView.m in Sources */,
 				B3C25CDF1381E93500BB634B /* UIQueryScrollView.m in Sources */,
-				003A2CA413B3C6470092AD2B /* UIQueryGestureDelegate.m in Sources */,
-				003A2CA613B3C6470092AD2B /* UITouch+Synthesize.m in Sources */,
-				003A2CB413B3E1940092AD2B /* UIEvent+Synthesize.m in Sources */,
 				003A2CB813B3E6E90092AD2B /* VisibleTouch.m in Sources */,
+				003A2ED213B43B6C0092AD2B /* UIEvent+Synthesize.m in Sources */,
+				003A2ED613B43B6C0092AD2B /* UITouch+Synthesize.m in Sources */,
+				003A2EDA13B43BDB0092AD2B /* UIQueryGestureDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

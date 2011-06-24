@@ -492,8 +492,7 @@
 #pragma mark Tap
 - (UIQuery *) tap
 {
-    [self.gestureDelegate tap];
-    
+    [self.gestureDelegate tap];    
     return [UIQuery withViews:views className:className];
 }
 
@@ -504,7 +503,11 @@
 }
 
 #pragma mark Swipe
-
+- (UIQuery *) swipeAt: (CGPoint) start direction: (SwipeDirection) direction
+{
+    [self.gestureDelegate swipeAt: start direction: direction];
+    return [UIQuery withViews:views className:className];
+}
 -(NSString *)description {
 	return [NSString stringWithFormat:@"UIQuery: %@", [views description]];
 }

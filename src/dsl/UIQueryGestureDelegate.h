@@ -10,6 +10,14 @@
 
 @class UIQuery;
 
+typedef enum SwipeDirection
+{
+    UP = 0,
+    LEFT = 1,
+    DOWN = 2,
+    RIGHT = 3
+} SwipeDirection;
+
 @interface UIQueryGestureDelegate : NSObject 
 {
     UIQuery *parent;
@@ -19,5 +27,5 @@
 
 - (void) tap;
 - (void) tapAtPoint: (CGPoint) point;
-
+- (void)swipeAt: (CGPoint) start direction: (SwipeDirection) direction;
 @end

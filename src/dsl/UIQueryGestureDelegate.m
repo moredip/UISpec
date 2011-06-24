@@ -14,6 +14,7 @@
 
 @interface UIQueryGestureDelegate()
 - (void) tapInView: (UIView*) view;
+- (BOOL) isHorizontal: (SwipeDirection) direction;
 @end
 
 @implementation UIQueryGestureDelegate
@@ -41,9 +42,9 @@
         
         // init an empty event
         UIEvent *event = [UIEvent eventWithTouch: touch];
-        [event updateTimestamp];
         // populate the event
         [event _addGestureRecognizersForView: targetView toTouch: touch];    
+        [event updateTimestamp];
         
         // dispatch phase down event
         [[UIApplication sharedApplication] sendEvent: event];
@@ -73,6 +74,54 @@
     [touch setPhase:UITouchPhaseEnded];
     [event updateTimestamp];
     [[UIApplication sharedApplication] sendEvent: event];
+}
+
+- (void)swipeAt: (CGPoint) start direction: (SwipeDirection) direction
+{
+    UITouch *touch = [UITouch touchAtPoint: start];
+
+    UIEvent *event = [UIEvent eventWithTouch: touch];
+    [event _addGestureRecognizersForView: touch.view toTouch: touch];
+    
+    [[UIApplication sharedApplication] sendEvent: event];
+        
+    for(int i = 0; i < 20; i++)
+    {
+        // compute new position in view
+        CGFloat newX;
+        CGFloat newY;
+        if([self isHorizontal: direction])
+        {
+            // will evaluate to -1 for left and 1 for right
+            int directionSign = direction - 2;
+            newX = start.x + directionSign * i * 20 ;
+            newY = start.y + i;
+        }
+        else
+        {
+            // evaluates to 1 for down, -1 for up
+            int directionSign = direction - 1;
+            newX = start.x + i;
+            newY = start.y + directionSign * i * 20 ;
+        }
+        
+        CGPoint newLocation = CGPointMake(newX, newY);
+        [touch setLocationInWindow: newLocation];
+        [touch setPhase: UITouchPhaseMoved];
+        
+        [event updateTimestamp];
+        
+        [[UIApplication sharedApplication] sendEvent: event];
+    }
+    
+    [touch setPhase:UITouchPhaseEnded];
+    [event updateTimestamp];
+    [[UIApplication sharedApplication] sendEvent: event];
+}
+
+- (BOOL) isHorizontal: (SwipeDirection) direction
+{
+    return direction == RIGHT || direction == LEFT;
 }
 
 @end

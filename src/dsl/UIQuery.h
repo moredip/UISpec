@@ -7,6 +7,7 @@
 //
 #import "ViewFilterSwizzler.h"
 #import "UIQueryExpectation.h"
+#import "UIQueryGestureDelegate.h"
 
 @class UIFilter;
 @class UIRedoer;
@@ -74,6 +75,7 @@ UIQuery * $(NSMutableString *script, ...);
 - (UIQuery *)touchxy:(NSNumber *)x ycoord:(NSNumber *)y;
 - (UIQuery *) tap;
 - (UIQuery *) tapAtPoint: (CGPoint) point;
+- (UIQuery *) swipeAt: (CGPoint) start direction: (SwipeDirection) direction;
 
 +(id)withApplication;
 +(NSDictionary *)describe:(id)object;
