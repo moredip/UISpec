@@ -7,7 +7,7 @@
 //
 #import "ViewFilterSwizzler.h"
 #import "UIQueryExpectation.h"
-#import "UIQueryGestureDelegate.h"
+#import "UITouchPerformer.h"
 
 @class UIFilter;
 @class UIRedoer;
@@ -25,6 +25,8 @@ UIQuery * $(NSMutableString *script, ...);
 	UIRedoer *redoer;
 	int timeout;
 	BOOL filter, exists;
+    
+    UITouchPerformer *touchPerformer;
 }
 
 @property(nonatomic, readonly) UIFilter *with;

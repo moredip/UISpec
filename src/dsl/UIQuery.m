@@ -21,10 +21,9 @@
 
 #import "UIEvent+Synthesize.h"
 #import "UITouch+Synthesize.h"
-#import "UIQueryGestureDelegate.h"
 
 @interface UIQuery()
-@property (nonatomic, readwrite, retain) UIQueryGestureDelegate *gestureDelegate;
+@property (nonatomic, readwrite, retain) UITouchPerformer *touchPerformer;
 @end
 
 @implementation UIQuery
@@ -89,7 +88,7 @@
 	return self;
 }
 
-@synthesize gestureDelegate;
+@synthesize touchPerformer;
 
 -(NSArray *)collect:(NSArray *)views {
 	return [[[[UIDescendants alloc] init] autorelease] collect:views];
@@ -407,11 +406,11 @@
 
 #pragma mark - User Event Generation (tap, swipe etc).
 #pragma mark Gesture delegate lazy getter
-- (UIQueryGestureDelegate*) gestureDelegate
+- (UITouchPerformer*) touchPerformer
 {
     static dispatch_once_t once;
-    dispatch_once(&once, ^ { gestureDelegate = [[UIQueryGestureDelegate alloc] initWithQuery: self]; });
-    return gestureDelegate;
+    dispatch_once(&once, ^ { self.touchPerformer = [UITouchPerformer touchPerformer]; });
+    return touchPerformer;
 }
 
 #pragma mark Legacy Touch
@@ -492,20 +491,20 @@
 #pragma mark Tap
 - (UIQuery *) tap
 {
-    [self.gestureDelegate tap];    
+    [self.touchPerformer tap];    
     return [UIQuery withViews:views className:className];
 }
 
 - (UIQuery *) tapAtPoint: (CGPoint) point
 {
-    [self.gestureDelegate tapAtPoint: point];
+    [self.touchPerformer tapAtPoint: point];
     return [UIQuery withViews:views className:className];
 }
 
 #pragma mark Swipe
 - (UIQuery *) swipeAt: (CGPoint) start direction: (SwipeDirection) direction
 {
-    [self.gestureDelegate swipeAt: start direction: direction];
+    [self.touchPerformer swipeAt: start direction: direction];
     return [UIQuery withViews:views className:className];
 }
 -(NSString *)description {
@@ -520,7 +519,7 @@
 	self.views = nil;
 	self.className = nil;
 	self.redoer = nil;
-    self.gestureDelegate = nil;
+    self.touchPerformer = nil;
 	[super dealloc];
 }
 
