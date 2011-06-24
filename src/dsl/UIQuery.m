@@ -24,7 +24,7 @@
 #import "UIQueryGestureDelegate.h"
 
 @interface UIQuery()
-- (UIQueryGestureDelegate *) gestureDelegate;
+@property (nonatomic, readwrite, retain) UIQueryGestureDelegate *gestureDelegate;
 @end
 
 @implementation UIQuery
@@ -88,6 +88,8 @@
 	}
 	return self;
 }
+
+@synthesize gestureDelegate;
 
 -(NSArray *)collect:(NSArray *)views {
 	return [[[[UIDescendants alloc] init] autorelease] collect:views];
@@ -408,7 +410,7 @@
 - (UIQueryGestureDelegate*) gestureDelegate
 {
     static dispatch_once_t once;
-    dispatch_once(&once, ^ { gestureDelegate = [[UIQueryGestureDelegate alloc] init]; });
+    dispatch_once(&once, ^ { gestureDelegate = [[UIQueryGestureDelegate alloc] initWithQuery: self]; });
     return gestureDelegate;
 }
 
@@ -419,7 +421,7 @@
 	for (UIView *targetView in [self targetViews]) {
 		UITouch *targetTouch = [[UITouch alloc] initInView:targetView];
 		UIEvent *eventDown = [[NSClassFromString(@"UITouchesEvent") alloc] initWithTouch:targetTouch];
-		NSSet *touches = [NSMutableSet setWithObject: touch];
+		NSSet *touches = [NSMutableSet setWithObject: targetTouch];
 		
 		[targetTouch.view touchesBegan:touches withEvent:eventDown];
 		
@@ -491,14 +493,15 @@
 #pragma mark Tap
 - (UIQuery *) tap
 {
-    UIQueryGestureDelegate *delegate = [self gestureDelegate];
-    [delegate tap];
+    [self.gestureDelegate tap];
+    
+    return [UIQuery withViews:views className:className];
 }
 
 - (UIQuery *) tapAtPoint: (CGPoint) point
 {
-    UIQueryGestureDelegate *delegate = [self gestureDelegate];
-    [delegate tapAtPoint: point];
+    [self.gestureDelegate tapAtPoint: point];
+    return [UIQuery withViews:views className:className];
 }
 
 #pragma mark Swipe
@@ -515,6 +518,7 @@
 	self.views = nil;
 	self.className = nil;
 	self.redoer = nil;
+    self.gestureDelegate = nil;
 	[super dealloc];
 }
 

@@ -10,7 +10,6 @@
 
 @class UIFilter;
 @class UIRedoer;
-@class UIQueryGestureDelegate;
 
 UIQuery * $(NSMutableString *script, ...);
 
@@ -25,8 +24,6 @@ UIQuery * $(NSMutableString *script, ...);
 	UIRedoer *redoer;
 	int timeout;
 	BOOL filter, exists;
-    
-    UIQueryGestureDelegate *gestureDelegate;
 }
 
 @property(nonatomic, readonly) UIFilter *with;
