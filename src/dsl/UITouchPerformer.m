@@ -6,36 +6,26 @@
 //  Copyright 2011 Edmunds. All rights reserved.
 //
 
-#import "UIQueryGestureDelegate.h"
+#import "UITouchPerformer.h"
 
-#import "UIQuery.h"
 #import "UITouch+Synthesize.h"
 #import "UIEvent+Synthesize.h"
 
-@interface UIQueryGestureDelegate()
+@interface UITouchPerformer()
 - (void) tapInView: (UIView*) view;
 - (BOOL) isHorizontal: (SwipeDirection) direction;
 @end
 
-@implementation UIQueryGestureDelegate
+@implementation UITouchPerformer
 
-- (id) initWithQuery: (UIQuery*) query
+- (id) touchPerformer
 {
-    self = [super init];
-    if (self)
-    {
-        // simply assign, we don't want a cycle here.
-        parent = query; 
-    }
-    return self;
+    return [[[UITouchPerformer alloc] init] autorelease];
 }
 
-- (void)tap 
+- (void) tapOnViews: (NSArray*) views
 {
-    // dispatch a tap to every view in target views
-	NSArray *targetViews = [parent targetViews];
-    
-    for(UIView *targetView in targetViews)
+    for(UIView *targetView in views)
     {
         // create a touch in the center of the view
         UITouch *touch = [UITouch touchInView: targetView];

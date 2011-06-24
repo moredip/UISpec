@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class UIQuery;
-
 typedef enum SwipeDirection
 {
     UP = 0,
@@ -18,14 +16,13 @@ typedef enum SwipeDirection
     RIGHT = 3
 } SwipeDirection;
 
-@interface UIQueryGestureDelegate : NSObject 
+@interface UITouchPerformer : NSObject 
 {
-    UIQuery *parent;
 }
 
-- (id) initWithQuery: (UIQuery*) query;
++ (id) touchPerformer;
 
-- (void) tap;
+- (void) tapOnViews: (NSArray*) views;
 - (void) tapAtPoint: (CGPoint) point;
 - (void)swipeAt: (CGPoint) start direction: (SwipeDirection) direction;
 @end
