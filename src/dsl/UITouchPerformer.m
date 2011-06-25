@@ -13,6 +13,8 @@
 
 #import "VisibleTouch.h"
 
+#define EVENT_DELAY 0.01
+
 @interface UITouchPerformer()
 - (CGPoint) keepPointInDeviceBounds: (CGPoint) point;
 -(void) wait:(double)seconds;
@@ -124,25 +126,18 @@
     
     // we'll dispatch 10 move events.
     int numberOfSteps = 10;
+    
     // compute x and y offset per step
     CGFloat xLength = end.x - start.x;
-    CGFloat xOffset = fabs(xLength) / numberOfSteps;
-    if(xLength < 0)
-    {
-        xOffset = -xOffset;
-    }
+    CGFloat xOffset = xLength / numberOfSteps;
     
     CGFloat yLength = end.y - start.y;
-    CGFloat yOffset = fabs(yLength) / numberOfSteps;
-    if(yLength < 0)
-    {
-        yOffset = -yOffset;
-    }
+    CGFloat yOffset = yLength / numberOfSteps;
     
     // create the new location for every step, create event and dispatch it
     for(int i = 0; i < numberOfSteps; i++)
     {
-        [self wait: 0.01];
+        [self wait: EVENT_DELAY];
         CGFloat newX = start.x + (i+1) * xOffset;
         CGFloat newY = start.y + (i+1) * yOffset;
         CGPoint newLocation = CGPointMake(newX, newY);
@@ -162,6 +157,80 @@
     [[UIApplication sharedApplication] sendEvent: event];
 }
 
+#pragma mark - Pinching
+- (void) pinchFrom: (CGRect) start to: (CGRect) end
+{
+    // grab corners from start and end rect
+    CGPoint lowerLeftStartPoint = CGPointMake(CGRectGetMinX(start), CGRectGetMaxY(start));
+    CGPoint upperRightStartPoint = CGPointMake(CGRectGetMaxX(start), CGRectGetMinY(start)); 
+
+    // create touches at those points
+    UITouch *lowerLeftTouch = [UITouch touchAtPoint: lowerLeftStartPoint];
+    UITouch *upperRightTouch = [UITouch touchAtPoint: upperRightStartPoint];
+    
+    // build event with lower left touch, add gesture recognizers for that touch
+    // and then add upper right touch, along with it's gesture recognizers
+    UIEvent *event = [UIEvent eventWithTouch: lowerLeftTouch];
+    [event _addGestureRecognizersForView: lowerLeftTouch.view toTouch: lowerLeftTouch];
+
+    [event _addTouch: upperRightTouch forDelayedDelivery: NO];
+    [event _addGestureRecognizersForView: upperRightTouch.view toTouch: upperRightTouch];
+
+    // dispatch touch down event
+    [[UIApplication sharedApplication] sendEvent:event];
+    
+    // we'll dispatch 10 move events.
+    int numberOfSteps = 15;
+    
+    // now, compute offsets
+    // first lower left corner
+    CGPoint lowerLeftEndPoint = CGPointMake(CGRectGetMinX(end), CGRectGetMaxY(end));
+    
+    CGFloat lowerLeftXLength = lowerLeftEndPoint.x - lowerLeftStartPoint.x;
+    CGFloat lowerLeftXOffset = lowerLeftXLength / numberOfSteps;
+    
+    CGFloat lowerLeftYLength = lowerLeftEndPoint.y - lowerLeftStartPoint.y;
+    CGFloat lowerLeftYOffset = lowerLeftYLength / numberOfSteps;
+    
+    // now upper right corner
+    CGPoint upperRightEndPoint = CGPointMake(CGRectGetMaxX(end), CGRectGetMinY(end)); 
+    
+    CGFloat upperRightXLength = upperRightEndPoint.x - upperRightStartPoint.x;
+    CGFloat upperRightXOffset = upperRightXLength / numberOfSteps;
+    
+    CGFloat upperRightYLength = upperRightEndPoint.y - upperRightStartPoint.y;
+    CGFloat upperRightYOffset = upperRightYLength / numberOfSteps;
+    
+    for(int i = 0; i < numberOfSteps; i++)
+    {
+        [self wait: EVENT_DELAY];
+        // move lower left touch
+        CGFloat newLowerLeftX = lowerLeftStartPoint.x + (i+i) * lowerLeftXOffset;
+        CGFloat newLowerLeftY = lowerLeftStartPoint.y + (i+i) * lowerLeftYOffset;
+        CGPoint newLowerLeftLocation = CGPointMake(newLowerLeftX, newLowerLeftY);
+        
+        [lowerLeftTouch setLocationInWindow: newLowerLeftLocation];
+        [lowerLeftTouch setPhase: UITouchPhaseMoved];
+        
+        // move upper left touch
+        CGFloat newUpperRightX = upperRightStartPoint.x + (i+i)*upperRightXOffset;
+        CGFloat newUpperRightY = upperRightStartPoint.y + (i+i)*upperRightYOffset;
+        CGPoint newUpperRightLocation = CGPointMake(newUpperRightX, newUpperRightY);
+        
+        [upperRightTouch setLocationInWindow: newUpperRightLocation];
+        [upperRightTouch setPhase: UITouchPhaseMoved];
+        
+        [[UIApplication sharedApplication] sendEvent:event];
+    }
+    
+    [self wait: EVENT_DELAY];
+    [lowerLeftTouch setPhase: UITouchPhaseEnded];
+    [upperRightTouch setPhase: UITouchPhaseEnded];
+    
+    [[UIApplication sharedApplication] sendEvent:event];
+}
+
+#pragma mark - Private utility methods
 - (CGPoint) keepPointInDeviceBounds: (CGPoint) point
 {
     CGRect frame = [[[UIApplication sharedApplication] keyWindow] frame];
@@ -191,9 +260,6 @@
         point.y = frame.size.height - 1;
     }
 }
-
-
-#pragma mark - Pinching
 
 #pragma mark - Legacy
 - (void) touchViews: (NSArray*) targetViews atPoint: (CGPoint) point

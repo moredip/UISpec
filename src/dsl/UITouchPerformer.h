@@ -46,4 +46,7 @@ typedef enum SwipeDirection
 // swipes from start to end
 - (void)swipeFrom: (CGPoint) start to: (CGPoint) end;
 
+// pinches from start rect to end rect
+- (void) pinchFrom: (CGRect) start to: (CGRect) end;
+
 @end

@@ -86,6 +86,9 @@ UIQuery * $(NSMutableString *script, ...);
 - (UIQuery *)swipeAt: (NSString*) start direction: (NSNumber *) direction;
 - (UIQuery *)swipeFrom: (NSString*) start to: (NSString*) end;
 
+// pinch
+- (UIQuery *) pinchFrom: (NSString *) start to: (NSString *) end;
+
 +(id)withApplication;
 +(NSDictionary *)describe:(id)object;
 +(void)show:(NSArray *)views;

@@ -492,6 +492,14 @@
 }
 
 #pragma mark Pinch
+- (UIQuery *) pinchFrom: (NSString *) start to: (NSString *) end
+{
+    CGRect startRect = CGRectFromString(start);
+    CGRect endRect = CGRectFromString(end);    
+    [self.touchPerformer pinchFrom: startRect to: endRect];
+
+    return [UIQuery withViews:views className:className];
+}
 
 -(NSString *)description {
 	return [NSString stringWithFormat:@"UIQuery: %@", [views description]];
