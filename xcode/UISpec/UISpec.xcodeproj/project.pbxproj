@@ -6,6 +6,22 @@
 	objectVersion = 45;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		008AFCF413B569A6000A5C00 /* UISpec */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 008AFCF513B569A6000A5C00 /* Build configuration list for PBXAggregateTarget "UISpec" */;
+			buildPhases = (
+				008AFCFC13B569DE000A5C00 /* ShellScript */,
+			);
+			dependencies = (
+				008AFCF913B569CF000A5C00 /* PBXTargetDependency */,
+				008AFCFB13B569CF000A5C00 /* PBXTargetDependency */,
+			);
+			name = UISpec;
+			productName = UISpec;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		003A2CB713B3E6E90092AD2B /* VisibleTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2CB513B3E6E90092AD2B /* VisibleTouch.h */; };
 		003A2CB813B3E6E90092AD2B /* VisibleTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2CB613B3E6E90092AD2B /* VisibleTouch.m */; };
@@ -17,6 +33,74 @@
 		003A2ED613B43B6C0092AD2B /* UITouch+Synthesize.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2ED013B43B6B0092AD2B /* UITouch+Synthesize.m */; };
 		003A2ED913B43BDB0092AD2B /* UITouchPerformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2ED713B43BDB0092AD2B /* UITouchPerformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		003A2EDA13B43BDB0092AD2B /* UITouchPerformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2ED813B43BDB0092AD2B /* UITouchPerformer.m */; };
+		008AFCA013B568DF000A5C00 /* UISpec.h in Headers */ = {isa = PBXBuildFile; fileRef = C76EB5F40F74594900EF8398 /* UISpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCA113B568DF000A5C00 /* UISpec_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = C76EB6230F7459DC00EF8398 /* UISpec_Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCA213B568DF000A5C00 /* UIQueryTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C76EB7510F76DFF400EF8398 /* UIQueryTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCA313B568DF000A5C00 /* UIFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = C76EB7540F76DFF400EF8398 /* UIFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCA413B568DF000A5C00 /* UIQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = C76EB7560F76DFF400EF8398 /* UIQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCA513B568DF000A5C00 /* UIExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = C76EB7580F76DFF400EF8398 /* UIExpectation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCA613B568DF000A5C00 /* CallCache.h in Headers */ = {isa = PBXBuildFile; fileRef = C76EB75B0F76DFF400EF8398 /* CallCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCA713B568DF000A5C00 /* NSNumberCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = C76EB75D0F76DFF400EF8398 /* NSNumberCreator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCA813B568DF000A5C00 /* UIQueryTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = C76EB7A10F76F03F00EF8398 /* UIQueryTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCA913B568DF000A5C00 /* Recordable.h in Headers */ = {isa = PBXBuildFile; fileRef = C7FE1C2B0F7B26360047857B /* Recordable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCAA13B568DF000A5C00 /* ViewFilterSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = C7FE1D9A0F7D6B060047857B /* ViewFilterSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCAB13B568DF000A5C00 /* UIQueryAll.h in Headers */ = {isa = PBXBuildFile; fileRef = C7FE1DF90F7D6D7C0047857B /* UIQueryAll.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCAC13B568DF000A5C00 /* UIProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = C7E953540F81799A005FC682 /* UIProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCAD13B568DF000A5C00 /* ReturnCacher.h in Headers */ = {isa = PBXBuildFile; fileRef = C7E9535A0F818688005FC682 /* ReturnCacher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCAE13B568DF000A5C00 /* WaitUntilIdle.h in Headers */ = {isa = PBXBuildFile; fileRef = C7407B58101AA2F900E5392C /* WaitUntilIdle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCAF13B568DF000A5C00 /* UIChildren.h in Headers */ = {isa = PBXBuildFile; fileRef = C7653A8E1023BE15001FF86B /* UIChildren.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCB013B568DF000A5C00 /* UIDescendants.h in Headers */ = {isa = PBXBuildFile; fileRef = C7653A901023BE15001FF86B /* UIDescendants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCB113B568DF000A5C00 /* UIParents.h in Headers */ = {isa = PBXBuildFile; fileRef = C7653A921023BE15001FF86B /* UIParents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCB213B568DF000A5C00 /* UIRedoer.h in Headers */ = {isa = PBXBuildFile; fileRef = C7653B5F1023FD63001FF86B /* UIRedoer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCB313B568DF000A5C00 /* UIInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = C77AB48E103F298700FDCEEB /* UIInspector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCB413B568DF000A5C00 /* UIBug.h in Headers */ = {isa = PBXBuildFile; fileRef = C77AB490103F298700FDCEEB /* UIBug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCB513B568DF000A5C00 /* UIConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = C7D32A91103F40DF00071AE1 /* UIConsole.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCB613B568DF000A5C00 /* UIMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = C708D8EE10C4B86A000A2462 /* UIMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCB713B568DF000A5C00 /* UIQueryExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = C77A47CE10C9903B00C1BF8D /* UIQueryExpectation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCB813B568DF000A5C00 /* UILog.h in Headers */ = {isa = PBXBuildFile; fileRef = C7EFF4D410E40D02007DB16A /* UILog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCB913B568DF000A5C00 /* UIConsoleLog.h in Headers */ = {isa = PBXBuildFile; fileRef = C7EFF50B10E41565007DB16A /* UIConsoleLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCBA13B568DF000A5C00 /* UIQuerySearchBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FDBB75410EECD0200193065 /* UIQuerySearchBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCBB13B568DF000A5C00 /* UIQuerySegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FDBB75610EECD0200193065 /* UIQuerySegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCBC13B568DF000A5C00 /* UIQueryTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FDBB75810EECD0200193065 /* UIQueryTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCBD13B568DF000A5C00 /* UIQueryWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FDBB75A10EECD0200193065 /* UIQueryWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCBE13B568DF000A5C00 /* UITouchPerformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2ED713B43BDB0092AD2B /* UITouchPerformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008AFCBF13B568DF000A5C00 /* UIQueryScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C25CDE1381E93500BB634B /* UIQueryScrollView.h */; };
+		008AFCC013B568DF000A5C00 /* VisibleTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2CB513B3E6E90092AD2B /* VisibleTouch.h */; };
+		008AFCC113B568DF000A5C00 /* UIEvent+Synthesize.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2ECB13B43B6A0092AD2B /* UIEvent+Synthesize.h */; };
+		008AFCC213B568DF000A5C00 /* UITouch+Synthesize.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2ECF13B43B6B0092AD2B /* UITouch+Synthesize.h */; };
+		008AFCC413B568DF000A5C00 /* UISpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C76EB5F50F74594900EF8398 /* UISpec.m */; };
+		008AFCC513B568DF000A5C00 /* UIQueryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C76EB7520F76DFF400EF8398 /* UIQueryTableViewCell.m */; };
+		008AFCC613B568DF000A5C00 /* UIFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = C76EB7550F76DFF400EF8398 /* UIFilter.m */; };
+		008AFCC713B568DF000A5C00 /* UIQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C76EB7570F76DFF400EF8398 /* UIQuery.m */; };
+		008AFCC813B568DF000A5C00 /* UIExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = C76EB7590F76DFF400EF8398 /* UIExpectation.m */; };
+		008AFCC913B568DF000A5C00 /* CallCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C76EB75C0F76DFF400EF8398 /* CallCache.m */; };
+		008AFCCA13B568DF000A5C00 /* NSNumberCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = C76EB75E0F76DFF400EF8398 /* NSNumberCreator.m */; };
+		008AFCCB13B568DF000A5C00 /* UIQueryTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C76EB7A20F76F03F00EF8398 /* UIQueryTableView.m */; };
+		008AFCCC13B568DF000A5C00 /* Recordable.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FE1C2C0F7B26360047857B /* Recordable.m */; };
+		008AFCCD13B568DF000A5C00 /* ViewFilterSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FE1D9B0F7D6B060047857B /* ViewFilterSwizzler.m */; };
+		008AFCCE13B568DF000A5C00 /* UIQueryAll.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FE1DFA0F7D6D7C0047857B /* UIQueryAll.m */; };
+		008AFCCF13B568DF000A5C00 /* UIProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E953550F81799A005FC682 /* UIProxy.m */; };
+		008AFCD013B568DF000A5C00 /* ReturnCacher.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E9535B0F818688005FC682 /* ReturnCacher.m */; };
+		008AFCD113B568DF000A5C00 /* WaitUntilIdle.m in Sources */ = {isa = PBXBuildFile; fileRef = C7407B59101AA2FA00E5392C /* WaitUntilIdle.m */; };
+		008AFCD213B568DF000A5C00 /* UIChildren.m in Sources */ = {isa = PBXBuildFile; fileRef = C7653A8F1023BE15001FF86B /* UIChildren.m */; };
+		008AFCD313B568DF000A5C00 /* UIDescendants.m in Sources */ = {isa = PBXBuildFile; fileRef = C7653A911023BE15001FF86B /* UIDescendants.m */; };
+		008AFCD413B568DF000A5C00 /* UIParents.m in Sources */ = {isa = PBXBuildFile; fileRef = C7653A931023BE15001FF86B /* UIParents.m */; };
+		008AFCD513B568DF000A5C00 /* UIRedoer.m in Sources */ = {isa = PBXBuildFile; fileRef = C7653B601023FD63001FF86B /* UIRedoer.m */; };
+		008AFCD613B568DF000A5C00 /* UIInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = C77AB48F103F298700FDCEEB /* UIInspector.m */; };
+		008AFCD713B568DF000A5C00 /* UIBug.m in Sources */ = {isa = PBXBuildFile; fileRef = C77AB491103F298700FDCEEB /* UIBug.m */; };
+		008AFCD813B568DF000A5C00 /* UIConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D32A92103F40DF00071AE1 /* UIConsole.m */; };
+		008AFCD913B568DF000A5C00 /* UIMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C708D8EF10C4B86A000A2462 /* UIMatcher.m */; };
+		008AFCDA13B568DF000A5C00 /* UIQueryExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = C77A47CF10C9903B00C1BF8D /* UIQueryExpectation.m */; };
+		008AFCDB13B568DF000A5C00 /* UIConsoleLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EFF50C10E41565007DB16A /* UIConsoleLog.m */; };
+		008AFCDC13B568DF000A5C00 /* UIQuerySearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDBB75510EECD0200193065 /* UIQuerySearchBar.m */; };
+		008AFCDD13B568DF000A5C00 /* UIQuerySegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDBB75710EECD0200193065 /* UIQuerySegmentedControl.m */; };
+		008AFCDE13B568DF000A5C00 /* UIQueryTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDBB75910EECD0200193065 /* UIQueryTabBar.m */; };
+		008AFCDF13B568DF000A5C00 /* UIQueryWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDBB75B10EECD0200193065 /* UIQueryWebView.m */; };
+		008AFCE013B568DF000A5C00 /* UIQueryScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C25CDD1381E93500BB634B /* UIQueryScrollView.m */; };
+		008AFCE113B568DF000A5C00 /* VisibleTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2CB613B3E6E90092AD2B /* VisibleTouch.m */; };
+		008AFCE213B568DF000A5C00 /* UIEvent+Synthesize.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2ECC13B43B6B0092AD2B /* UIEvent+Synthesize.m */; };
+		008AFCE313B568DF000A5C00 /* UITouch+Synthesize.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2ED013B43B6B0092AD2B /* UITouch+Synthesize.m */; };
+		008AFCE413B568DF000A5C00 /* UITouchPerformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2ED813B43BDB0092AD2B /* UITouchPerformer.m */; };
 		2FDBB75C10EECD0200193065 /* UIQuerySearchBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FDBB75410EECD0200193065 /* UIQuerySearchBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FDBB75D10EECD0200193065 /* UIQuerySearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDBB75510EECD0200193065 /* UIQuerySearchBar.m */; };
 		2FDBB75E10EECD0200193065 /* UIQuerySegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FDBB75610EECD0200193065 /* UIQuerySegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,7 +110,7 @@
 		2FDBB76210EECD0200193065 /* UIQueryWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FDBB75A10EECD0200193065 /* UIQueryWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FDBB76310EECD0200193065 /* UIQueryWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDBB75B10EECD0200193065 /* UIQueryWebView.m */; };
 		40C7CC2A12E9E854003FF22C /* DescribeUIExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = C7D4F2EC10BDA57C00B00019 /* DescribeUIExpectation.h */; };
-		40C7CC2D12E9E8BB003FF22C /* libUISpec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C76EB5D20F74586B00EF8398 /* libUISpec.a */; };
+		40C7CC2D12E9E8BB003FF22C /* libUISpec-iphoneos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C76EB5D20F74586B00EF8398 /* libUISpec-iphoneos.a */; };
 		B3C25CDF1381E93500BB634B /* UIQueryScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C25CDD1381E93500BB634B /* UIQueryScrollView.m */; };
 		B3C25CE01381E93500BB634B /* UIQueryScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C25CDE1381E93500BB634B /* UIQueryScrollView.h */; };
 		C708D8F110C4B86A000A2462 /* UIMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = C708D8EE10C4B86A000A2462 /* UIMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,6 +169,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		008AFCF813B569CF000A5C00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C76EB5D10F74586B00EF8398;
+			remoteInfo = "UISpec device";
+		};
+		008AFCFA13B569CF000A5C00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 008AFC9E13B568DF000A5C00;
+			remoteInfo = "UISpec simulator";
+		};
 		40C7CBD812E9E6E0003FF22C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
@@ -105,6 +203,7 @@
 		003A2ED013B43B6B0092AD2B /* UITouch+Synthesize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch+Synthesize.m"; sourceTree = "<group>"; };
 		003A2ED713B43BDB0092AD2B /* UITouchPerformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITouchPerformer.h; sourceTree = "<group>"; };
 		003A2ED813B43BDB0092AD2B /* UITouchPerformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITouchPerformer.m; sourceTree = "<group>"; };
+		008AFCE913B568DF000A5C00 /* libUISpec-iphonesimulator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libUISpec-iphonesimulator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDBB75410EECD0200193065 /* UIQuerySearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQuerySearchBar.h; sourceTree = "<group>"; };
 		2FDBB75510EECD0200193065 /* UIQuerySearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIQuerySearchBar.m; sourceTree = "<group>"; };
 		2FDBB75610EECD0200193065 /* UIQuerySegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQuerySegmentedControl.h; sourceTree = "<group>"; };
@@ -127,7 +226,7 @@
 		C7653A931023BE15001FF86B /* UIParents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIParents.m; path = ../../src/dsl/UIParents.m; sourceTree = SOURCE_ROOT; };
 		C7653B5F1023FD63001FF86B /* UIRedoer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRedoer.h; sourceTree = "<group>"; };
 		C7653B601023FD63001FF86B /* UIRedoer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRedoer.m; sourceTree = "<group>"; };
-		C76EB5D20F74586B00EF8398 /* libUISpec.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUISpec.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C76EB5D20F74586B00EF8398 /* libUISpec-iphoneos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libUISpec-iphoneos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76EB5F40F74594900EF8398 /* UISpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UISpec.h; path = ../../src/UISpec.h; sourceTree = SOURCE_ROOT; };
 		C76EB5F50F74594900EF8398 /* UISpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UISpec.m; path = ../../src/UISpec.m; sourceTree = SOURCE_ROOT; };
 		C76EB6230F7459DC00EF8398 /* UISpec_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISpec_Prefix.pch; sourceTree = "<group>"; };
@@ -175,6 +274,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		008AFCE513B568DF000A5C00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C76EB5D00F74586B00EF8398 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -188,7 +294,7 @@
 			files = (
 				003A2CBC13B3E7090092AD2B /* CoreGraphics.framework in Frameworks */,
 				003A2CBA13B3E7010092AD2B /* UIKit.framework in Frameworks */,
-				40C7CC2D12E9E8BB003FF22C /* libUISpec.a in Frameworks */,
+				40C7CC2D12E9E8BB003FF22C /* libUISpec-iphoneos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,8 +319,9 @@
 		1AB674ADFE9D54B511CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C76EB5D20F74586B00EF8398 /* libUISpec.a */,
+				C76EB5D20F74586B00EF8398 /* libUISpec-iphoneos.a */,
 				C7D4F29310BDA39C00B00019 /* Specs.app */,
+				008AFCE913B568DF000A5C00 /* libUISpec-iphonesimulator.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,6 +441,48 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		008AFC9F13B568DF000A5C00 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				008AFCA013B568DF000A5C00 /* UISpec.h in Headers */,
+				008AFCA113B568DF000A5C00 /* UISpec_Prefix.pch in Headers */,
+				008AFCA213B568DF000A5C00 /* UIQueryTableViewCell.h in Headers */,
+				008AFCA313B568DF000A5C00 /* UIFilter.h in Headers */,
+				008AFCA413B568DF000A5C00 /* UIQuery.h in Headers */,
+				008AFCA513B568DF000A5C00 /* UIExpectation.h in Headers */,
+				008AFCA613B568DF000A5C00 /* CallCache.h in Headers */,
+				008AFCA713B568DF000A5C00 /* NSNumberCreator.h in Headers */,
+				008AFCA813B568DF000A5C00 /* UIQueryTableView.h in Headers */,
+				008AFCA913B568DF000A5C00 /* Recordable.h in Headers */,
+				008AFCAA13B568DF000A5C00 /* ViewFilterSwizzler.h in Headers */,
+				008AFCAB13B568DF000A5C00 /* UIQueryAll.h in Headers */,
+				008AFCAC13B568DF000A5C00 /* UIProxy.h in Headers */,
+				008AFCAD13B568DF000A5C00 /* ReturnCacher.h in Headers */,
+				008AFCAE13B568DF000A5C00 /* WaitUntilIdle.h in Headers */,
+				008AFCAF13B568DF000A5C00 /* UIChildren.h in Headers */,
+				008AFCB013B568DF000A5C00 /* UIDescendants.h in Headers */,
+				008AFCB113B568DF000A5C00 /* UIParents.h in Headers */,
+				008AFCB213B568DF000A5C00 /* UIRedoer.h in Headers */,
+				008AFCB313B568DF000A5C00 /* UIInspector.h in Headers */,
+				008AFCB413B568DF000A5C00 /* UIBug.h in Headers */,
+				008AFCB513B568DF000A5C00 /* UIConsole.h in Headers */,
+				008AFCB613B568DF000A5C00 /* UIMatcher.h in Headers */,
+				008AFCB713B568DF000A5C00 /* UIQueryExpectation.h in Headers */,
+				008AFCB813B568DF000A5C00 /* UILog.h in Headers */,
+				008AFCB913B568DF000A5C00 /* UIConsoleLog.h in Headers */,
+				008AFCBA13B568DF000A5C00 /* UIQuerySearchBar.h in Headers */,
+				008AFCBB13B568DF000A5C00 /* UIQuerySegmentedControl.h in Headers */,
+				008AFCBC13B568DF000A5C00 /* UIQueryTabBar.h in Headers */,
+				008AFCBD13B568DF000A5C00 /* UIQueryWebView.h in Headers */,
+				008AFCBE13B568DF000A5C00 /* UITouchPerformer.h in Headers */,
+				008AFCBF13B568DF000A5C00 /* UIQueryScrollView.h in Headers */,
+				008AFCC013B568DF000A5C00 /* VisibleTouch.h in Headers */,
+				008AFCC113B568DF000A5C00 /* UIEvent+Synthesize.h in Headers */,
+				008AFCC213B568DF000A5C00 /* UITouch+Synthesize.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40C7CC2912E9E854003FF22C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,9 +536,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C76EB5D10F74586B00EF8398 /* UISpec */ = {
+		008AFC9E13B568DF000A5C00 /* UISpec simulator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C76EB5D50F7458BF00EF8398 /* Build configuration list for PBXNativeTarget "UISpec" */;
+			buildConfigurationList = 008AFCE613B568DF000A5C00 /* Build configuration list for PBXNativeTarget "UISpec simulator" */;
+			buildPhases = (
+				008AFC9F13B568DF000A5C00 /* Headers */,
+				008AFCC313B568DF000A5C00 /* Sources */,
+				008AFCE513B568DF000A5C00 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UISpec simulator";
+			productName = UISpec_Simulator;
+			productReference = 008AFCE913B568DF000A5C00 /* libUISpec-iphonesimulator.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C76EB5D10F74586B00EF8398 /* UISpec device */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C76EB5D50F7458BF00EF8398 /* Build configuration list for PBXNativeTarget "UISpec device" */;
 			buildPhases = (
 				C76EB5CE0F74586B00EF8398 /* Headers */,
 				C76EB5CF0F74586B00EF8398 /* Sources */,
@@ -399,9 +565,9 @@
 			);
 			dependencies = (
 			);
-			name = UISpec;
+			name = "UISpec device";
 			productName = UISpec_Simulator;
-			productReference = C76EB5D20F74586B00EF8398 /* libUISpec.a */;
+			productReference = C76EB5D20F74586B00EF8398 /* libUISpec-iphoneos.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		C7D4F29210BDA39C00B00019 /* Specs */ = {
@@ -442,7 +608,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C76EB5D10F74586B00EF8398 /* UISpec */,
+				C76EB5D10F74586B00EF8398 /* UISpec device */,
+				008AFC9E13B568DF000A5C00 /* UISpec simulator */,
+				008AFCF413B569A6000A5C00 /* UISpec */,
 				C7D4F29210BDA39C00B00019 /* Specs */,
 			);
 		};
@@ -459,7 +627,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		008AFCFC13B569DE000A5C00 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf ${BUILT_PRODUCTS_DIR}/lib${PRODUCT_NAME}.a\n\nlipo -create \"${BUILT_PRODUCTS_DIR}/../${BUILD_STYLE}-iphonesimulator/lib${PRODUCT_NAME}-iphonesimulator.a\" \\\n\"${BUILT_PRODUCTS_DIR}/../${BUILD_STYLE}-iphoneos/lib${PRODUCT_NAME}-iphoneos.a\" -output \\\n\"${BUILT_PRODUCTS_DIR}/lib${PRODUCT_NAME}.a\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		008AFCC313B568DF000A5C00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				008AFCC413B568DF000A5C00 /* UISpec.m in Sources */,
+				008AFCC513B568DF000A5C00 /* UIQueryTableViewCell.m in Sources */,
+				008AFCC613B568DF000A5C00 /* UIFilter.m in Sources */,
+				008AFCC713B568DF000A5C00 /* UIQuery.m in Sources */,
+				008AFCC813B568DF000A5C00 /* UIExpectation.m in Sources */,
+				008AFCC913B568DF000A5C00 /* CallCache.m in Sources */,
+				008AFCCA13B568DF000A5C00 /* NSNumberCreator.m in Sources */,
+				008AFCCB13B568DF000A5C00 /* UIQueryTableView.m in Sources */,
+				008AFCCC13B568DF000A5C00 /* Recordable.m in Sources */,
+				008AFCCD13B568DF000A5C00 /* ViewFilterSwizzler.m in Sources */,
+				008AFCCE13B568DF000A5C00 /* UIQueryAll.m in Sources */,
+				008AFCCF13B568DF000A5C00 /* UIProxy.m in Sources */,
+				008AFCD013B568DF000A5C00 /* ReturnCacher.m in Sources */,
+				008AFCD113B568DF000A5C00 /* WaitUntilIdle.m in Sources */,
+				008AFCD213B568DF000A5C00 /* UIChildren.m in Sources */,
+				008AFCD313B568DF000A5C00 /* UIDescendants.m in Sources */,
+				008AFCD413B568DF000A5C00 /* UIParents.m in Sources */,
+				008AFCD513B568DF000A5C00 /* UIRedoer.m in Sources */,
+				008AFCD613B568DF000A5C00 /* UIInspector.m in Sources */,
+				008AFCD713B568DF000A5C00 /* UIBug.m in Sources */,
+				008AFCD813B568DF000A5C00 /* UIConsole.m in Sources */,
+				008AFCD913B568DF000A5C00 /* UIMatcher.m in Sources */,
+				008AFCDA13B568DF000A5C00 /* UIQueryExpectation.m in Sources */,
+				008AFCDB13B568DF000A5C00 /* UIConsoleLog.m in Sources */,
+				008AFCDC13B568DF000A5C00 /* UIQuerySearchBar.m in Sources */,
+				008AFCDD13B568DF000A5C00 /* UIQuerySegmentedControl.m in Sources */,
+				008AFCDE13B568DF000A5C00 /* UIQueryTabBar.m in Sources */,
+				008AFCDF13B568DF000A5C00 /* UIQueryWebView.m in Sources */,
+				008AFCE013B568DF000A5C00 /* UIQueryScrollView.m in Sources */,
+				008AFCE113B568DF000A5C00 /* VisibleTouch.m in Sources */,
+				008AFCE213B568DF000A5C00 /* UIEvent+Synthesize.m in Sources */,
+				008AFCE313B568DF000A5C00 /* UITouch+Synthesize.m in Sources */,
+				008AFCE413B568DF000A5C00 /* UITouchPerformer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C76EB5CF0F74586B00EF8398 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -512,14 +736,100 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		008AFCF913B569CF000A5C00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C76EB5D10F74586B00EF8398 /* UISpec device */;
+			targetProxy = 008AFCF813B569CF000A5C00 /* PBXContainerItemProxy */;
+		};
+		008AFCFB13B569CF000A5C00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 008AFC9E13B568DF000A5C00 /* UISpec simulator */;
+			targetProxy = 008AFCFA13B569CF000A5C00 /* PBXContainerItemProxy */;
+		};
 		40C7CBD912E9E6E0003FF22C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C76EB5D10F74586B00EF8398 /* UISpec */;
+			target = C76EB5D10F74586B00EF8398 /* UISpec device */;
 			targetProxy = 40C7CBD812E9E6E0003FF22C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		008AFCE713B568DF000A5C00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = i386;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = UISpec_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PREBINDING = NO;
+				PRODUCT_NAME = "UISpec-iphonesimulator";
+				PUBLIC_HEADERS_FOLDER_PATH = UISpec;
+				SDKROOT = iphonesimulator;
+				SUPPORTED_PLATFORMS = iphonesimulator;
+				VALID_ARCHS = "armv6 armv7 i386";
+			};
+			name = Debug;
+		};
+		008AFCE813B568DF000A5C00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = i386;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = UISpec_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PREBINDING = NO;
+				PRODUCT_NAME = "UISpec-iphonesimulator";
+				PUBLIC_HEADERS_FOLDER_PATH = UISpec;
+				SDKROOT = iphonesimulator;
+				SUPPORTED_PLATFORMS = iphonesimulator;
+				VALID_ARCHS = "armv6 armv7 i386";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		008AFCF613B569A6000A5C00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					i386,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		008AFCF713B569A6000A5C00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					i386,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
 		1DEB91F008733DB70010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -528,6 +838,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
@@ -541,6 +852,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
 			};
@@ -563,9 +875,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				PRODUCT_NAME = UISpec;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "UISpec-iphoneos";
+				PUBLIC_HEADERS_FOLDER_PATH = UISpec;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = iphoneos;
+				VALID_ARCHS = "armv6 armv7 i386";
 			};
 			name = Debug;
 		};
@@ -585,9 +899,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				PRODUCT_NAME = UISpec;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "UISpec-iphoneos";
+				PUBLIC_HEADERS_FOLDER_PATH = UISpec;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = iphoneos;
+				VALID_ARCHS = "armv6 armv7 i386";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -654,6 +970,23 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		008AFCE613B568DF000A5C00 /* Build configuration list for PBXNativeTarget "UISpec simulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				008AFCE713B568DF000A5C00 /* Debug */,
+				008AFCE813B568DF000A5C00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		008AFCF513B569A6000A5C00 /* Build configuration list for PBXAggregateTarget "UISpec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				008AFCF613B569A6000A5C00 /* Debug */,
+				008AFCF713B569A6000A5C00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "UISpec" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -663,7 +996,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C76EB5D50F7458BF00EF8398 /* Build configuration list for PBXNativeTarget "UISpec" */ = {
+		C76EB5D50F7458BF00EF8398 /* Build configuration list for PBXNativeTarget "UISpec device" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C76EB5D30F74586B00EF8398 /* Debug */,
