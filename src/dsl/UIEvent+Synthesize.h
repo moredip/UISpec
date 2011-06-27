@@ -14,4 +14,5 @@
 + (id) eventWithTouch: (UITouch *) touch;
 - (id)initWithTouch:(UITouch *)touch;
 - (void) updateTimestamp;
+
 @end

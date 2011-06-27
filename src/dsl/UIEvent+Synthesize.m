@@ -7,7 +7,7 @@
 //
 #import <objc/runtime.h>
 #import "UIEvent+Synthesize.h"
-
+#import "GSEvent.h"
 //
 // GSEvent is an undeclared object. We don't need to use it ourselves but some
 // Apple APIs (UIScrollView in particular) require the x and y fields to be present.
@@ -38,14 +38,55 @@
 
 - (id)_initWithEvent:(GSEventProxy *)fp8 touches:(id)fp12;
 - (void) _setTimestamp: (NSTimeInterval) interval;
+// just to shut the compiler up
+- (void) _setGSEvent:(GSEventRef) eventRef;
+- (void) _clearTouches;
+- (void) _addTouch: (UITouch*) touch forDelayedDelivery: (BOOL) delayed;
 @end
 
 @implementation UIEvent (UIEvent_Synthesize)
 
++ (NSDictionary*) recordDictionaryForViewLocation: (CGPoint) viewLocation andWindowLocation: (CGPoint) windowLocation
+{
+    NSMutableDictionary *eventRecordDict = [NSMutableDictionary dictionaryWithCapacity:4];
+    
+    // new timestamp
+    NSNumber *timestamp = [NSNumber numberWithLong: [[NSDate date] timeIntervalSince1970]];
+    [eventRecordDict setObject:timestamp forKey:@"Time"];
+    
+    // location in view dictionary
+    NSMutableDictionary *viewLocationDict = [NSMutableDictionary dictionaryWithCapacity:2];
+    [viewLocationDict setObject:[NSNumber numberWithFloat: viewLocation.x] forKey:@"X"];
+    [viewLocationDict setObject:[NSNumber numberWithFloat:viewLocation.y ] forKey:@"Y"];
+    [eventRecordDict setObject:viewLocationDict forKey:@"Location"];
+    
+    // location in window dictionary
+    NSMutableDictionary *windowDict = [NSMutableDictionary dictionaryWithCapacity:2];
+    [windowDict setObject:[NSNumber numberWithFloat: windowLocation.x] forKey:@"X"];
+    [windowDict setObject:[NSNumber numberWithFloat:windowLocation.y ] forKey:@"Y"];
+    [eventRecordDict setObject:windowDict forKey:@"WindowLocation"];
+    
+    // event type (touch)
+    NSNumber *type = [NSNumber numberWithInt: kGSEventHand];
+    [eventRecordDict setObject: type forKey:@"Type"];
+
+    return eventRecordDict;
+}
 
 + (id) eventWithTouch: (UITouch *) touch
 {    
-    UIEvent *event = [[[UIEvent alloc] initWithTouch: touch] autorelease];
+    UIEvent *event = [[UIApplication sharedApplication] _touchesEvent];
+    
+    UIWindow *window = touch.window;
+    CGPoint windowLocation = [touch locationInView: window];
+    CGPoint viewLocation = [touch locationInView: touch.view];
+    
+    CFDictionaryRef recordDictionary = (CFDictionaryRef) [UIEvent recordDictionaryForViewLocation:viewLocation andWindowLocation: windowLocation];
+    GSEventRef eventRef = GSEventCreateWithPlist(recordDictionary);
+    
+    [event _setGSEvent: eventRef];
+    [event _addTouch: touch forDelayedDelivery: NO];
+       
     return event;
 }
 

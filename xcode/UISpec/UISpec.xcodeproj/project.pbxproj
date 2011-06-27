@@ -101,6 +101,34 @@
 		008AFCE213B568DF000A5C00 /* UIEvent+Synthesize.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2ECC13B43B6B0092AD2B /* UIEvent+Synthesize.m */; };
 		008AFCE313B568DF000A5C00 /* UITouch+Synthesize.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2ED013B43B6B0092AD2B /* UITouch+Synthesize.m */; };
 		008AFCE413B568DF000A5C00 /* UITouchPerformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A2ED813B43BDB0092AD2B /* UITouchPerformer.m */; };
+		0097BF6913B8286D00D79E81 /* GraphicsServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF5B13B8286D00D79E81 /* GraphicsServices.h */; };
+		0097BF6A13B8286D00D79E81 /* GraphicsServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF5B13B8286D00D79E81 /* GraphicsServices.h */; };
+		0097BF6B13B8286D00D79E81 /* GSBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF5C13B8286D00D79E81 /* GSBase.h */; };
+		0097BF6C13B8286D00D79E81 /* GSBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF5C13B8286D00D79E81 /* GSBase.h */; };
+		0097BF6D13B8286D00D79E81 /* GSCapability.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF5D13B8286D00D79E81 /* GSCapability.h */; };
+		0097BF6E13B8286D00D79E81 /* GSCapability.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF5D13B8286D00D79E81 /* GSCapability.h */; };
+		0097BF6F13B8286D00D79E81 /* GSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF5E13B8286D00D79E81 /* GSColor.h */; };
+		0097BF7013B8286D00D79E81 /* GSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF5E13B8286D00D79E81 /* GSColor.h */; };
+		0097BF7113B8286D00D79E81 /* GSEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF5F13B8286D00D79E81 /* GSEvent.h */; };
+		0097BF7213B8286D00D79E81 /* GSEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF5F13B8286D00D79E81 /* GSEvent.h */; };
+		0097BF7313B8286D00D79E81 /* GSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6013B8286D00D79E81 /* GSFont.h */; };
+		0097BF7413B8286D00D79E81 /* GSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6013B8286D00D79E81 /* GSFont.h */; };
+		0097BF7513B8286D00D79E81 /* GSGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6113B8286D00D79E81 /* GSGeometry.h */; };
+		0097BF7613B8286D00D79E81 /* GSGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6113B8286D00D79E81 /* GSGeometry.h */; };
+		0097BF7713B8286D00D79E81 /* GSHeartbeat.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6213B8286D00D79E81 /* GSHeartbeat.h */; };
+		0097BF7813B8286D00D79E81 /* GSHeartbeat.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6213B8286D00D79E81 /* GSHeartbeat.h */; };
+		0097BF7913B8286D00D79E81 /* GSHiccup.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6313B8286D00D79E81 /* GSHiccup.h */; };
+		0097BF7A13B8286D00D79E81 /* GSHiccup.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6313B8286D00D79E81 /* GSHiccup.h */; };
+		0097BF7B13B8286D00D79E81 /* GSKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6413B8286D00D79E81 /* GSKeyboard.h */; };
+		0097BF7C13B8286D00D79E81 /* GSKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6413B8286D00D79E81 /* GSKeyboard.h */; };
+		0097BF7D13B8286D00D79E81 /* GSMainScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6513B8286D00D79E81 /* GSMainScreen.h */; };
+		0097BF7E13B8286D00D79E81 /* GSMainScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6513B8286D00D79E81 /* GSMainScreen.h */; };
+		0097BF7F13B8286D00D79E81 /* GSMaps.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6613B8286D00D79E81 /* GSMaps.h */; };
+		0097BF8013B8286D00D79E81 /* GSMaps.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6613B8286D00D79E81 /* GSMaps.h */; };
+		0097BF8113B8286D00D79E81 /* GSStatusBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6713B8286D00D79E81 /* GSStatusBar.h */; };
+		0097BF8213B8286D00D79E81 /* GSStatusBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6713B8286D00D79E81 /* GSStatusBar.h */; };
+		0097BF8313B8286D00D79E81 /* GSWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6813B8286D00D79E81 /* GSWindow.h */; };
+		0097BF8413B8286D00D79E81 /* GSWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 0097BF6813B8286D00D79E81 /* GSWindow.h */; };
 		2FDBB75C10EECD0200193065 /* UIQuerySearchBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FDBB75410EECD0200193065 /* UIQuerySearchBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FDBB75D10EECD0200193065 /* UIQuerySearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDBB75510EECD0200193065 /* UIQuerySearchBar.m */; };
 		2FDBB75E10EECD0200193065 /* UIQuerySegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FDBB75610EECD0200193065 /* UIQuerySegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -204,6 +232,20 @@
 		003A2ED713B43BDB0092AD2B /* UITouchPerformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITouchPerformer.h; sourceTree = "<group>"; };
 		003A2ED813B43BDB0092AD2B /* UITouchPerformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITouchPerformer.m; sourceTree = "<group>"; };
 		008AFCE913B568DF000A5C00 /* libUISpec-iphonesimulator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libUISpec-iphonesimulator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0097BF5B13B8286D00D79E81 /* GraphicsServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsServices.h; sourceTree = "<group>"; };
+		0097BF5C13B8286D00D79E81 /* GSBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSBase.h; sourceTree = "<group>"; };
+		0097BF5D13B8286D00D79E81 /* GSCapability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSCapability.h; sourceTree = "<group>"; };
+		0097BF5E13B8286D00D79E81 /* GSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSColor.h; sourceTree = "<group>"; };
+		0097BF5F13B8286D00D79E81 /* GSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSEvent.h; sourceTree = "<group>"; };
+		0097BF6013B8286D00D79E81 /* GSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFont.h; sourceTree = "<group>"; };
+		0097BF6113B8286D00D79E81 /* GSGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGeometry.h; sourceTree = "<group>"; };
+		0097BF6213B8286D00D79E81 /* GSHeartbeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHeartbeat.h; sourceTree = "<group>"; };
+		0097BF6313B8286D00D79E81 /* GSHiccup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHiccup.h; sourceTree = "<group>"; };
+		0097BF6413B8286D00D79E81 /* GSKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKeyboard.h; sourceTree = "<group>"; };
+		0097BF6513B8286D00D79E81 /* GSMainScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMainScreen.h; sourceTree = "<group>"; };
+		0097BF6613B8286D00D79E81 /* GSMaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMaps.h; sourceTree = "<group>"; };
+		0097BF6713B8286D00D79E81 /* GSStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSStatusBar.h; sourceTree = "<group>"; };
+		0097BF6813B8286D00D79E81 /* GSWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSWindow.h; sourceTree = "<group>"; };
 		2FDBB75410EECD0200193065 /* UIQuerySearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQuerySearchBar.h; sourceTree = "<group>"; };
 		2FDBB75510EECD0200193065 /* UIQuerySearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIQuerySearchBar.m; sourceTree = "<group>"; };
 		2FDBB75610EECD0200193065 /* UIQuerySegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQuerySegmentedControl.h; sourceTree = "<group>"; };
@@ -301,11 +343,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0097BF5913B8286D00D79E81 /* Private Headers */ = {
+			isa = PBXGroup;
+			children = (
+				0097BF5A13B8286D00D79E81 /* GraphicsServices */,
+			);
+			name = "Private Headers";
+			path = "../../Private Headers";
+			sourceTree = "<group>";
+		};
+		0097BF5A13B8286D00D79E81 /* GraphicsServices */ = {
+			isa = PBXGroup;
+			children = (
+				0097BF5B13B8286D00D79E81 /* GraphicsServices.h */,
+				0097BF5C13B8286D00D79E81 /* GSBase.h */,
+				0097BF5D13B8286D00D79E81 /* GSCapability.h */,
+				0097BF5E13B8286D00D79E81 /* GSColor.h */,
+				0097BF5F13B8286D00D79E81 /* GSEvent.h */,
+				0097BF6013B8286D00D79E81 /* GSFont.h */,
+				0097BF6113B8286D00D79E81 /* GSGeometry.h */,
+				0097BF6213B8286D00D79E81 /* GSHeartbeat.h */,
+				0097BF6313B8286D00D79E81 /* GSHiccup.h */,
+				0097BF6413B8286D00D79E81 /* GSKeyboard.h */,
+				0097BF6513B8286D00D79E81 /* GSMainScreen.h */,
+				0097BF6613B8286D00D79E81 /* GSMaps.h */,
+				0097BF6713B8286D00D79E81 /* GSStatusBar.h */,
+				0097BF6813B8286D00D79E81 /* GSWindow.h */,
+			);
+			path = GraphicsServices;
+			sourceTree = "<group>";
+		};
 		08FB7794FE84155DC02AAC07 /* UISpec */ = {
 			isa = PBXGroup;
 			children = (
 				003A2CBB13B3E7090092AD2B /* CoreGraphics.framework */,
 				003A2CB913B3E7010092AD2B /* UIKit.framework */,
+				0097BF5913B8286D00D79E81 /* Private Headers */,
 				C7D4F2B110BDA46900B00019 /* specs */,
 				C76EB5E70F74592C00EF8398 /* src */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
@@ -480,6 +553,20 @@
 				008AFCC013B568DF000A5C00 /* VisibleTouch.h in Headers */,
 				008AFCC113B568DF000A5C00 /* UIEvent+Synthesize.h in Headers */,
 				008AFCC213B568DF000A5C00 /* UITouch+Synthesize.h in Headers */,
+				0097BF6A13B8286D00D79E81 /* GraphicsServices.h in Headers */,
+				0097BF6C13B8286D00D79E81 /* GSBase.h in Headers */,
+				0097BF6E13B8286D00D79E81 /* GSCapability.h in Headers */,
+				0097BF7013B8286D00D79E81 /* GSColor.h in Headers */,
+				0097BF7213B8286D00D79E81 /* GSEvent.h in Headers */,
+				0097BF7413B8286D00D79E81 /* GSFont.h in Headers */,
+				0097BF7613B8286D00D79E81 /* GSGeometry.h in Headers */,
+				0097BF7813B8286D00D79E81 /* GSHeartbeat.h in Headers */,
+				0097BF7A13B8286D00D79E81 /* GSHiccup.h in Headers */,
+				0097BF7C13B8286D00D79E81 /* GSKeyboard.h in Headers */,
+				0097BF7E13B8286D00D79E81 /* GSMainScreen.h in Headers */,
+				0097BF8013B8286D00D79E81 /* GSMaps.h in Headers */,
+				0097BF8213B8286D00D79E81 /* GSStatusBar.h in Headers */,
+				0097BF8413B8286D00D79E81 /* GSWindow.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +617,20 @@
 				003A2CB713B3E6E90092AD2B /* VisibleTouch.h in Headers */,
 				003A2ED113B43B6C0092AD2B /* UIEvent+Synthesize.h in Headers */,
 				003A2ED513B43B6C0092AD2B /* UITouch+Synthesize.h in Headers */,
+				0097BF6913B8286D00D79E81 /* GraphicsServices.h in Headers */,
+				0097BF6B13B8286D00D79E81 /* GSBase.h in Headers */,
+				0097BF6D13B8286D00D79E81 /* GSCapability.h in Headers */,
+				0097BF6F13B8286D00D79E81 /* GSColor.h in Headers */,
+				0097BF7113B8286D00D79E81 /* GSEvent.h in Headers */,
+				0097BF7313B8286D00D79E81 /* GSFont.h in Headers */,
+				0097BF7513B8286D00D79E81 /* GSGeometry.h in Headers */,
+				0097BF7713B8286D00D79E81 /* GSHeartbeat.h in Headers */,
+				0097BF7913B8286D00D79E81 /* GSHiccup.h in Headers */,
+				0097BF7B13B8286D00D79E81 /* GSKeyboard.h in Headers */,
+				0097BF7D13B8286D00D79E81 /* GSMainScreen.h in Headers */,
+				0097BF7F13B8286D00D79E81 /* GSMaps.h in Headers */,
+				0097BF8113B8286D00D79E81 /* GSStatusBar.h in Headers */,
+				0097BF8313B8286D00D79E81 /* GSWindow.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -986,6 +1087,7 @@
 				008AFCF713B569A6000A5C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "UISpec" */ = {
 			isa = XCConfigurationList;
