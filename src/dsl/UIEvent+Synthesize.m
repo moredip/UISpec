@@ -73,7 +73,7 @@
     return eventRecordDict;
 }
 
-+ (id) eventWithTouch: (UITouch *) touch
++ (id) applicationEventWithTouch: (UITouch *) touch
 {    
     UIEvent *event = [[UIApplication sharedApplication] _touchesEvent];
     

@@ -11,7 +11,7 @@
 
 @interface UIEvent (UIEvent_Synthesize)
 
-+ (id) eventWithTouch: (UITouch *) touch;
++ (id) applicationEventWithTouch: (UITouch *) touch;
 - (id)initWithTouch:(UITouch *)touch;
 - (void) updateTimestamp;
 
