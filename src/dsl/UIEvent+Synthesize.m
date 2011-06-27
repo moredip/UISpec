@@ -34,14 +34,11 @@
 @implementation GSEventProxy
 @end
 
-@interface UIEvent (Creation)
-
+@interface UIEvent (Compiler_warnings_private)
+// just to shut the compiler up, private we don't want to expose GSEventRef
+// to the rest of the project
 - (id)_initWithEvent:(GSEventProxy *)fp8 touches:(id)fp12;
-- (void) _setTimestamp: (NSTimeInterval) interval;
-// just to shut the compiler up
 - (void) _setGSEvent:(GSEventRef) eventRef;
-- (void) _clearTouches;
-- (void) _addTouch: (UITouch*) touch forDelayedDelivery: (BOOL) delayed;
 @end
 
 @implementation UIEvent (UIEvent_Synthesize)

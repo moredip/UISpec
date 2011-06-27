@@ -19,5 +19,13 @@
 
 - (void)setPhase:(UITouchPhase)phase;
 - (void)setLocationInWindow:(CGPoint)location;
+@end
 
+@interface UITouch(Compiler_warnings)
+- (void) setTapCount: (int) tapCount;
+- (void) setPhase: (UITouchPhase) phase;
+- (void) setIsTap: (BOOL) isTap;
+- (void) _setLocationInWindow: (CGPoint) point resetPrevious: (BOOL) resetPrevious;
+- (void) setView: (UIView*) view;
+- (void) setWindow: (UIWindow*) window;
 @end
