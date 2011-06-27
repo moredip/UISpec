@@ -44,6 +44,8 @@
         // dispatch phase down event
         [[UIApplication sharedApplication] sendEvent: event];
         
+        [self wait: EVENT_DELAY];
+        
         // dispatch phase up
         [touch setPhase:UITouchPhaseEnded];
         [event updateTimestamp];
@@ -53,6 +55,7 @@
 
 - (void) tapAtPoint: (CGPoint) point
 {
+    NSLog(@"Taping at: %@", NSStringFromCGPoint(point));
     // create a touch in the center of the view
     UITouch *touch = [UITouch touchAtPoint: point];
     
@@ -64,6 +67,8 @@
     
     // dispatch phase down event
     [[UIApplication sharedApplication] sendEvent: event];
+    
+    [self wait: EVENT_DELAY];
     
     // dispatch phase up
     [touch setPhase:UITouchPhaseEnded];
