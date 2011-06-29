@@ -36,13 +36,15 @@
         UITouch *touch = [UITouch touchInView: targetView];
         
         // init an empty event
-        UIEvent *event = [UIEvent eventWithTouch: touch];
+        UIEvent *event = [UIEvent applicationEventWithTouch: touch];
         // populate the event
         [event _addGestureRecognizersForView: targetView toTouch: touch];    
         [event updateTimestamp];
         
         // dispatch phase down event
         [[UIApplication sharedApplication] sendEvent: event];
+        
+        [self wait: EVENT_DELAY];
         
         // dispatch phase up
         [touch setPhase:UITouchPhaseEnded];
@@ -53,17 +55,20 @@
 
 - (void) tapAtPoint: (CGPoint) point
 {
+    NSLog(@"Taping at: %@", NSStringFromCGPoint(point));
     // create a touch in the center of the view
     UITouch *touch = [UITouch touchAtPoint: point];
     
     // init an empty event
-    UIEvent *event = [UIEvent eventWithTouch: touch];
+    UIEvent *event = [UIEvent applicationEventWithTouch: touch];
     // populate the event
     [event _addGestureRecognizersForView: touch.view toTouch: touch];    
     [event updateTimestamp];
     
     // dispatch phase down event
     [[UIApplication sharedApplication] sendEvent: event];
+    
+    [self wait: EVENT_DELAY];
     
     // dispatch phase up
     [touch setPhase:UITouchPhaseEnded];
@@ -118,7 +123,7 @@
     // create initial touch and UIEvent
     UITouch *touch = [UITouch touchAtPoint: start];
     
-    UIEvent *event = [UIEvent eventWithTouch: touch];
+    UIEvent *event = [UIEvent applicationEventWithTouch: touch];
     [event _addGestureRecognizersForView: touch.view toTouch: touch];
     
     // dispatch touch down
@@ -170,7 +175,7 @@
     
     // build event with lower left touch, add gesture recognizers for that touch
     // and then add upper right touch, along with it's gesture recognizers
-    UIEvent *event = [UIEvent eventWithTouch: lowerLeftTouch];
+    UIEvent *event = [UIEvent applicationEventWithTouch: lowerLeftTouch];
     [event _addGestureRecognizersForView: lowerLeftTouch.view toTouch: lowerLeftTouch];
 
     [event _addTouch: upperRightTouch forDelayedDelivery: NO];
