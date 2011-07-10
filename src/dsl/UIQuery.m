@@ -459,12 +459,31 @@
 }
 
 #pragma mark Swipe
+
+- (SwipeDirection) parseSwipeDirectionString:(NSString *)direction {
+	direction = [direction lowercaseString];
+	
+	if( [direction isEqualToString:@"up"] ){
+		return SwipeDirectionUp;
+	}else if( [direction isEqualToString:@"down"] ){
+		return SwipeDirectionDown;
+	}else if( [direction isEqualToString:@"left"] ){
+		return SwipeDirectionLeft;
+	}else if( [direction isEqualToString:@"right"] ){
+		return SwipeDirectionRight;
+	}else{
+		[NSException raise:@"Invalid swipe direction" format:@"Must be one of left, right, up, or down"];
+		return 0;
+	}
+
+}
+
 // swipes from center of view in the given direction
-- (UIQuery *)swipeInDirection: (NSNumber *) direction
+- (UIQuery *)swipeInDirection: (NSString *) directionString
 {
     NSArray *targetViews = [self targetViews];
-    SwipeDirection swipeDirection = [direction intValue];
-    [self.touchPerformer swipeInViews: targetViews direction: swipeDirection];
+    [self.touchPerformer swipeInViews: targetViews 
+							direction:[self parseSwipeDirectionString:directionString]];
     
     return [UIQuery withViews:views className:className];
 }
@@ -472,11 +491,11 @@
 // swipe at given point in given direction
 // point must be in the format recognized by CGPointFromString
 // direction maps to SwipingDirection enum
-- (UIQuery *) swipeAt: (NSString *) start direction: (NSNumber *) direction
+- (UIQuery *) swipeAt: (NSString *) start direction:  (NSString *) directionString
 {
     CGPoint point = CGPointFromString(start);
-    SwipeDirection swipeDirection = [direction intValue];
-    [self.touchPerformer swipeAt: point direction: swipeDirection];
+    [self.touchPerformer swipeAt: point 
+					   direction:[self parseSwipeDirectionString:directionString]];
     
     return [UIQuery withViews:views className:className];
 }

@@ -10,10 +10,10 @@
 
 typedef enum SwipeDirection
 {
-    UP = 0,
-    LEFT = 1,
-    DOWN = 2,
-    RIGHT = 3
+    SwipeDirectionUp,
+    SwipeDirectionLeft,
+    SwipeDirectionDown,
+    SwipeDirectionRight
 } SwipeDirection;
 
 @interface UITouchPerformer : NSObject 

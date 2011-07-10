@@ -97,18 +97,20 @@
     // ends not initialized
     CGPoint end = CGPointMake(start.x, start.y);
     switch (direction) {
-        case LEFT:
+        case SwipeDirectionLeft:
             end = CGPointMake(start.x - 80, start.y + 5);
             break;
-        case RIGHT:
+        case SwipeDirectionRight:
             end = CGPointMake(start.x + 80, start.y + 5);
             break;
-        case UP:
+        case SwipeDirectionUp:
             end = CGPointMake(start.x + 5, start.y - 80);
             break;
-        case DOWN:
+        case SwipeDirectionDown:
             end = CGPointMake(start.x + 5, start.y + 80);
             break;
+		default:
+			[NSException raise:@"Invalid swipe direction" format:@"Must be one of Left, Right, Up, or Down"];
     }
     
     // now go for actual swipe
