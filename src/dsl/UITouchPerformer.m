@@ -13,7 +13,8 @@
 
 #import "VisibleTouch.h"
 
-#define EVENT_DELAY 0.01
+#define TAP_DELAY 0.1
+#define GESTURES_DELAY 0.01
 
 @interface UITouchPerformer()
 - (CGPoint) keepPointInDeviceBounds: (CGPoint) point;
@@ -34,7 +35,10 @@
     {
         // create a touch in the center of the view
         UITouch *touch = [UITouch touchInView: targetView];
-        
+				
+		VisibleTouch *visibleTouch = [[VisibleTouch alloc] initWithCenter:[targetView.superview convertPoint:targetView.center toView:nil]];
+		[visibleTouch addToKeyWindow];
+		        
         // init an empty event
         UIEvent *event = [UIEvent applicationEventWithTouch: touch];
         // populate the event
@@ -44,20 +48,27 @@
         // dispatch phase down event
         [[UIApplication sharedApplication] sendEvent: event];
         
-        [self wait: EVENT_DELAY];
+        [self wait: TAP_DELAY];
         
         // dispatch phase up
         [touch setPhase:UITouchPhaseEnded];
         [event updateTimestamp];
         [[UIApplication sharedApplication] sendEvent: event];
+	
+		[visibleTouch removeFromSuperview];
+		[visibleTouch release];
     }
 }
 
 - (void) tapAtPoint: (CGPoint) point
 {
-    NSLog(@"Taping at: %@", NSStringFromCGPoint(point));
-    // create a touch in the center of the view
+    NSLog(@"Tapping at: %@", NSStringFromCGPoint(point));
+
     UITouch *touch = [UITouch touchAtPoint: point];
+	
+	VisibleTouch *visibleTouch = [[VisibleTouch alloc] initWithCenter:point];
+	[visibleTouch addToKeyWindow];
+
     
     // init an empty event
     UIEvent *event = [UIEvent applicationEventWithTouch: touch];
@@ -68,12 +79,15 @@
     // dispatch phase down event
     [[UIApplication sharedApplication] sendEvent: event];
     
-    [self wait: EVENT_DELAY];
+    [self wait: TAP_DELAY];
     
     // dispatch phase up
     [touch setPhase:UITouchPhaseEnded];
     [event updateTimestamp];
     [[UIApplication sharedApplication] sendEvent: event];
+	
+	[visibleTouch removeFromSuperview];
+	[visibleTouch release];
 }
 
 #pragma mark - Swiping
@@ -140,11 +154,15 @@
     
     CGFloat yLength = end.y - start.y;
     CGFloat yOffset = yLength / numberOfSteps;
+	
+	// Create a view to display a visible touch on the screen with a center of the touch
+	VisibleTouch *visibleTouch = [[VisibleTouch alloc] initWithCenter:start];
+	[visibleTouch addToKeyWindow];
     
     // create the new location for every step, create event and dispatch it
     for(int i = 0; i < numberOfSteps; i++)
     {
-        [self wait: EVENT_DELAY];
+        [self wait: GESTURES_DELAY];
         CGFloat newX = start.x + (i+1) * xOffset;
         CGFloat newY = start.y + (i+1) * yOffset;
         CGPoint newLocation = CGPointMake(newX, newY);
@@ -154,6 +172,8 @@
         [event updateTimestamp];
         
         [[UIApplication sharedApplication] sendEvent: event];
+		
+		visibleTouch.center = newLocation;
     }
     
     [self wait: 0.01];
@@ -162,6 +182,9 @@
     
     [event updateTimestamp];
     [[UIApplication sharedApplication] sendEvent: event];
+	
+	[visibleTouch removeFromSuperview];
+	[visibleTouch release];
 }
 
 #pragma mark - Pinching
@@ -210,7 +233,7 @@
     
     for(int i = 0; i < numberOfSteps; i++)
     {
-        [self wait: EVENT_DELAY];
+        [self wait: GESTURES_DELAY];
         // move lower left touch
         CGFloat newLowerLeftX = lowerLeftStartPoint.x + (i+i) * lowerLeftXOffset;
         CGFloat newLowerLeftY = lowerLeftStartPoint.y + (i+i) * lowerLeftYOffset;
@@ -230,7 +253,7 @@
         [[UIApplication sharedApplication] sendEvent:event];
     }
     
-    [self wait: EVENT_DELAY];
+    [self wait: GESTURES_DELAY];
     [lowerLeftTouch setPhase: UITouchPhaseEnded];
     [upperRightTouch setPhase: UITouchPhaseEnded];
     
