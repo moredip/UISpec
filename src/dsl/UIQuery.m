@@ -237,22 +237,6 @@
 	return [super respondsToSelector:aSelector];
 }
 
--(UIQuery *)flash {
-	[[UIQueryExpectation withQuery:self] exist:@"before you can flash it"];
-	for (UIView *view in [self targetViews]) {
-		UIColor *tempColor = [view.backgroundColor retain];
-		for (int i=0; i<5; i++) {
-			view.backgroundColor = [UIColor yellowColor];
-			CFRunLoopRunInMode(kCFRunLoopDefaultMode, .05, false);
-			view.backgroundColor = [UIColor blueColor];
-			CFRunLoopRunInMode(kCFRunLoopDefaultMode, .05, false);
-		}
-		view.backgroundColor = tempColor;
-		[tempColor release];
-	}
-	return [UIQuery withViews:views className:className];
-}
-
 -(UIQuery *)show {
 	//NSLog(@"calling show");
 	[[UIQueryExpectation withQuery:self] exist:@"before you can show it"];
