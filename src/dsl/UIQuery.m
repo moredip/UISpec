@@ -409,50 +409,14 @@
 }
 
 - (UIQuery *)touchx:(NSNumber *)x y:(NSNumber *)y {
-	//NSLog(@"UIQuery - (UIQuery *)touchxy:(int)x ycoord:(int)y = %@, %@", x, y);
-	[[UIQueryExpectation withQuery:self] exist:@"before you can touch it"];
 	
-	for (UIView *aView in [self targetViews]) {
-		UITouch *aTouch = [[UITouch alloc] initInView:aView xcoord:[x intValue] ycoord:[y intValue]];
-        
-        // Create a view to display a visible touch on the screen with a center of the touch
-        CGPoint thePoint = CGPointMake([x floatValue], [y floatValue]);
-        UIView *visibleTouch = [[VisibleTouch alloc] initWithCenter:thePoint];
-        [[aView window] addSubview:visibleTouch];
-        [[aView window] bringSubviewToFront:visibleTouch];
-        
-		UIEvent *eventDown = [[NSClassFromString(@"UITouchesEvent") alloc] initWithTouch:aTouch];
-		NSSet *touches = [[NSMutableSet alloc] initWithObjects:&aTouch count:1];
-		
-		[aTouch.view touchesBegan:touches withEvent:eventDown];
-        
-        // Send event to the gesture recognizers
-        for (UIGestureRecognizer *recognizer in [aView gestureRecognizers])
-        {
-            [recognizer touchesBegan:touches withEvent:eventDown];
-        }
-        
-        [self wait:.25]; // Pause so touch can be seen
-        
-		UIEvent *eventUp = [[NSClassFromString(@"UITouchesEvent") alloc] initWithTouch:aTouch];
-		[aTouch setPhase:UITouchPhaseEnded];
-		
-		[aTouch.view touchesEnded:touches withEvent:eventDown];
-        
-        for (UIGestureRecognizer *recognizer in [aView gestureRecognizers])
-        {
-            [recognizer touchesEnded:touches withEvent:eventDown];
-        }
-        
-        [visibleTouch removeFromSuperview];
-        [visibleTouch release];
-        
-		[eventDown release];
-		[eventUp release];
-		[touches release];
-		[aTouch release];
-		[self wait:.5];
+	for (UIView *target in [self targetViews]) {
+		// only call KIF Additions if they're around
+		if ([target respondsToSelector:@selector(tapAtPoint:)]) {
+			[target tapAtPoint:CGPointMake([x floatValue], [y floatValue])];
+		}
 	}
+	
 	return [UIQuery withViews:views className:className];
 }
 
