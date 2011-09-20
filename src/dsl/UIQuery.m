@@ -24,7 +24,7 @@
 @synthesize with;
 @synthesize should;
 @synthesize parent, child, descendant, find;
-@synthesize touch, flash, show, path, inspect;
+@synthesize touch, show, path, inspect;
 @synthesize timeout;
 @synthesize views;
 @synthesize className;
