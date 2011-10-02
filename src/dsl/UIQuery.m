@@ -383,22 +383,27 @@
 	[[UIQueryExpectation withQuery:self] exist:@"before you can touch it"];
 	
 	for (UIView *view in [self targetViews]) {
-		UITouch *touch = [[UITouch alloc] initInView:view];
-		UIEvent *eventDown = [[NSClassFromString(@"UITouchesEvent") alloc] initWithTouch:touch];
-		NSSet *touches = [[NSMutableSet alloc] initWithObjects:&touch count:1];
-		
-		[touch.view touchesBegan:touches withEvent:eventDown];
-		
-		UIEvent *eventUp = [[NSClassFromString(@"UITouchesEvent") alloc] initWithTouch:touch];
-		[touch setPhase:UITouchPhaseEnded];
-		
-		[touch.view touchesEnded:touches withEvent:eventDown];
-		
-		[eventDown release];
-		[eventUp release];
-		[touches release];
-		[touch release];
-		[self wait:.5];
+        // call KIF Additions tap method if it's available
+        if ([view respondsToSelector:@selector(tap)]) {
+            [view tap];
+        }else{        
+            UITouch *touch = [[UITouch alloc] initInView:view];
+            UIEvent *eventDown = [[NSClassFromString(@"UITouchesEvent") alloc] initWithTouch:touch];
+            NSSet *touches = [[NSMutableSet alloc] initWithObjects:&touch count:1];
+            
+            [touch.view touchesBegan:touches withEvent:eventDown];
+            
+            UIEvent *eventUp = [[NSClassFromString(@"UITouchesEvent") alloc] initWithTouch:touch];
+            [touch setPhase:UITouchPhaseEnded];
+            
+            [touch.view touchesEnded:touches withEvent:eventDown];
+            
+            [eventDown release];
+            [eventUp release];
+            [touches release];
+            [touch release];
+            [self wait:.5];
+        }
 	}
 	return [UIQuery withViews:views className:className];
 }
