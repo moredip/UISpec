@@ -17,7 +17,7 @@ UIQuery * $(NSMutableString *script, ...);
 	UIFilter *with;
 	UIQueryExpectation *should;
 	UIQuery *parent, *child, *descendant, *find;
-	UIQuery *touch, *show, *path, *inspect;
+	UIQuery *show, *path, *inspect;
 	NSMutableArray *views;
 	NSString *className;
 	UIRedoer *redoer;
@@ -28,7 +28,7 @@ UIQuery * $(NSMutableString *script, ...);
 @property(nonatomic, readonly) UIFilter *with;
 @property(nonatomic, readonly) UIQueryExpectation *should;
 @property(nonatomic, readonly) UIQuery *parent, *child, *descendant, *find;
-@property(nonatomic, readonly) UIQuery *touch, *show, *path, *inspect;
+@property(nonatomic, readonly) UIQuery *show, *path, *inspect;
 @property int timeout;
 @property(nonatomic, retain) NSMutableArray *views;
 @property(nonatomic, retain) NSString *className;
@@ -63,9 +63,6 @@ UIQuery * $(NSMutableString *script, ...);
 -(UIQuery *)show;
 -(UIQuery *)path;
 -(UIQuery *)inspect;
-- (UIQuery *)touch;
-- (UIQuery *)touchx:(NSNumber *)x y:(NSNumber *)y;
-- (UIQuery *)touchxy:(NSNumber *)x ycoord:(NSNumber *)y;
 -(NSString *)description;
 -(void)logRange:(NSString *)prefix range:(NSRange)range;
 
@@ -82,7 +79,7 @@ UIQuery * $(NSMutableString *script, ...);
 @property(nonatomic, readonly) UIFilter *with;
 @property(nonatomic, readonly) UIQueryExpectation *should;
 @property(nonatomic, readonly) UIQuery *parent, *child, *descendant, *find;
-@property(nonatomic, readonly) UIQuery *touch, *show, *path, *inspect;
+@property(nonatomic, readonly) UIQuery *show, *path, *inspect;
 @property int timeout;
 @property(nonatomic, retain) NSMutableArray *views;
 @property(nonatomic, retain) NSString *className;
@@ -97,15 +94,4 @@ UIQuery * $(NSMutableString *script, ...);
 -(UIQuery *)wait:(double)seconds;
 -(UIQuery *)target;
 
-@end
-
-@interface UIEvent (Synthesis)
-- (id)initWithTouch:(UITouch *)touch;
-@end
-
-@interface UITouch (Synthesize)
-- (id)initInView:(UIView *)view;
-- (id)initInView:(UIView *)view xcoord:(int)x ycoord:(int)y;
-- (void)setPhase:(UITouchPhase)phase;
-- (void)setLocationInWindow:(CGPoint)location;
 @end
