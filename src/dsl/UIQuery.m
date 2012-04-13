@@ -536,7 +536,7 @@
 	[super dealloc];
 }
 
-@end
+
 
 UIQuery * $(NSMutableString *script, ...) {
 	va_list args;
